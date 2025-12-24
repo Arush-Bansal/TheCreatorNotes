@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import Roadmap from '../components/Roadmap.astro';
+
+const guideSteps = [
+  {
+    title: "Understanding the Creator Flywheel",
+    description: "Before you build, you must understand the mechanics of how content scales.",
+    href: "/notes/creator-flywheel",
+    icon: "⚙️"
+  },
+  {
+    title: "Identifying Your High-Value Niche",
+    description: "Why 'generalist' creators struggle and how to find your specific authority.",
+    href: "/notes/find-niche",
+    icon: "🎯"
+  },
+  {
+    title: "The Content Pillar System",
+    description: "Learn how to turn one big idea into 20 pieces of high-performing content.",
+    href: "/notes/scripting-retention",
+    icon: "🏛️"
+  },
+  {
+    title: "Your First $1,000 Roadmap",
+    description: "The direct path from audience building to sustainable monetization.",
+    href: "/notes/monetization-map",
+    icon: "💰"
+  }
+];
+---
+
+<Layout title="Start Here">
+  <Navbar />
+  
+  <main class="start-here-page">
+    <section class="intro">
+      <div class="container narrow text-center">
+        <div class="badge hand-drawn">Welcome</div>
+        <h1>New to Creator Notes?</h1>
+        <p class="lead">
+          We believe the best way to grow is to follow a <strong>mental map</strong>, not a random checklist. Follow this guided path to ground yourself in the fundamentals.
+        </p>
+      </div>
+    </section>
+
+    <section class="roadmap-section">
+      <div class="container">
+        <Roadmap steps={guideSteps} />
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container text-center">
+        <div class="cta-box box-border shadow-offset">
+          <h2>Ready to dive deeper?</h2>
+          <p>Get our weekly "Deep Dive" strategies delivered to your inbox.</p>
+          <a href="/subscribe" class="btn btn-primary">Join the Newsletter</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .start-here-page {
+    padding-top: 5rem;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .narrow {
+    max-width: 800px;
+  }
+
+  .intro h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+  }
+
+  .badge {
+    background: var(--accent-red);
+    color: white;
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border: var(--border-width) solid var(--border-color);
+    margin-bottom: 1.5rem;
+    transform: rotate(2deg);
+  }
+
+  .roadmap-section {
+    padding: 4rem 0;
+  }
+
+  .cta {
+    padding: 6rem 0;
+  }
+
+  .cta-box {
+    padding: 4rem;
+    background: var(--accent-yellow);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .cta-box h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .cta-box p {
+    margin-bottom: 2rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .intro h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>

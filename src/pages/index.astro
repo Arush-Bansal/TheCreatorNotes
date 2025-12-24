@@ -1,0 +1,308 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import NoteCard from '../components/NoteCard.astro';
+
+const featuredNotes = [
+  {
+    title: "10x Your LinkedIn Growth",
+    description: "A deep dive into the algorithms and content strategies that actually work in 2024.",
+    category: "Strategy",
+    href: "/notes/linkedin-growth",
+    icon: "🚀",
+    color: "var(--accent-red)"
+  },
+  {
+    title: "The Creator Tech Stack",
+    description: "The essential tools for recording, editing, and managing your creator business.",
+    category: "Tools",
+    href: "/notes/creator-tech-stack",
+    icon: "🛠️",
+    color: "var(--accent-teal)"
+  },
+  {
+    title: "Monetization Starter Map",
+    description: "A step-by-step roadmap to transitioning from 0 to your first $1,000 as a creator.",
+    category: "Map",
+    href: "/notes/monetization-map",
+    icon: "🗺️",
+    color: "var(--accent-yellow)"
+  }
+];
+---
+
+<Layout title="Home">
+  <Navbar />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-container">
+        <div class="hero-text-content">
+          <div class="badge hand-drawn">Highly Structured</div>
+          <h1>Strategies for <span class="highlight-underline">Creators</span> who mean business.</h1>
+          <p class="hero-subtitle">
+            No fluff. No generic advice. Just actionable mental maps and tools to help you navigate the creator economy.
+          </p>
+          <div class="hero-actions">
+            <a href="/start-here" class="btn btn-primary btn-lg">Start Here →</a>
+            <a href="/strategies" class="btn btn-secondary btn-lg">Explore Notes</a>
+          </div>
+        </div>
+        
+        <div class="hero-illustration">
+          <div class="illus-box box-border shadow-offset">
+            <span class="illus-icon">💡</span>
+            <div class="illus-label hand-drawn">Insight #01</div>
+          </div>
+          <div class="illus-arrow">
+            <svg width="60" height="60" viewBox="0 0 60 60" fill="none">
+              <path d="M10 10C30 10 30 50 50 50M50 50L40 45M50 50L45 40" stroke="var(--border-color)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="illus-box box-border shadow-offset secondary">
+            <span class="illus-icon">🚀</span>
+            <div class="illus-label hand-drawn">Action</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="hand-drawn">Latest Creator Notes</h2>
+          <p>Fresh strategies and tools updated weekly.</p>
+        </div>
+        
+        <div class="notes-grid">
+          {featuredNotes.map(note => (
+            <NoteCard {...note} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Domain Section -->
+    <section class="domains">
+      <div class="container domain-container box-border shadow-offset">
+        <div class="section-header">
+          <h2>Find Your Focus</h2>
+          <p>Choose your specific creator domain for tailored advice.</p>
+        </div>
+        <div class="domain-grid">
+          <div class="domain-item">
+            <span class="domain-icon">🎥</span>
+            <h3>Video</h3>
+          </div>
+          <div class="domain-item">
+            <span class="domain-icon">🎙️</span>
+            <h3>Audio</h3>
+          </div>
+          <div class="domain-item">
+            <span class="domain-icon">📝</span>
+            <h3>Writing</h3>
+          </div>
+          <div class="domain-item">
+            <span class="domain-icon">🎨</span>
+            <h3>Design</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .hero {
+    padding: 6rem 0;
+    background: white;
+    border-bottom: var(--border-width) solid var(--border-color);
+  }
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .badge {
+    background: var(--accent-yellow);
+    display: inline-block;
+    padding: 0.5rem 1.2rem;
+    border: var(--border-width) solid var(--border-color);
+    margin-bottom: 2rem;
+    transform: rotate(-2deg);
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  .hero h1 {
+    font-size: 4.2rem; /* Slightly larger */
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+    line-height: 1.05;
+  }
+
+  .highlight-underline {
+    position: relative;
+    z-index: 1;
+  }
+
+  .highlight-underline::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: var(--accent-red);
+    opacity: 0.2;
+    z-index: -1;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 550px;
+    margin-bottom: 3rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+
+  .btn-secondary {
+    background: white;
+    color: var(--text-primary);
+    box-shadow: 4px 4px 0px var(--border-color);
+  }
+
+  .btn-secondary:hover {
+    background: var(--bg-primary);
+  }
+
+  .hero-illustration {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .illus-box {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .illus-box.secondary {
+    background: var(--accent-teal);
+    color: white;
+  }
+
+  .illus-icon {
+    font-size: 3rem;
+  }
+
+  .illus-label {
+    position: absolute;
+    bottom: -10px;
+    right: -20px;
+    background: white;
+    color: var(--text-primary);
+    padding: 0.1rem 0.5rem;
+    border: 1px solid var(--border-color);
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  .section-header {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .featured {
+    padding: 8rem 0;
+  }
+
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 3rem;
+  }
+
+  .domains {
+    padding: 8rem 0;
+    background: var(--accent-teal);
+    margin-bottom: -5rem;
+  }
+
+  .domain-container {
+    padding: 4rem;
+  }
+
+  .domain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+  }
+
+  .domain-item {
+    padding: 3.5rem 2rem;
+    text-align: center;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--radius-md);
+    background: white;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .domain-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-red);
+  }
+
+  .domain-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+    }
+    .hero-illustration {
+      display: none;
+    }
+    .hero h1 {
+      font-size: 2.8rem;
+    }
+  }
+</style>

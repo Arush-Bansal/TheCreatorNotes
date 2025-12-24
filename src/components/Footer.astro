@@ -1,0 +1,143 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="logo">
+        <span class="logo-red">Creator</span>Notes
+      </a>
+      <p class="brand-description">
+        Helping creators navigate the digital landscape with structured, illustrated strategies.
+      </p>
+    </div>
+    
+    <div class="footer-links">
+      <div class="link-group">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/start-here">Start Here</a></li>
+          <li><a href="/strategies">Strategies</a></li>
+          <li><a href="/tools">Tools</a></li>
+        </ul>
+      </div>
+      
+      <div class="link-group">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">YouTube</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom">
+    <div class="container bottom-content">
+      <p>&copy; {year} Creator Notes.</p>
+      <div class="legal-links">
+        <a href="/privacy">Privacy</a>
+        <span class="dot">•</span>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--accent-indigo);
+    color: white;
+    padding: 5rem 0 2rem;
+    margin-top: 5rem;
+    border-top: var(--border-width) solid var(--border-color);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    display: inline-block;
+    color: white;
+  }
+
+  .logo-red {
+    color: var(--accent-yellow);
+  }
+
+  .brand-description {
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 320px;
+    font-size: 0.95rem;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .link-group h4 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-yellow);
+    margin-bottom: 1.5rem;
+  }
+
+  .link-group ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .link-group a {
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .link-group a:hover {
+    text-decoration: underline;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+  }
+
+  .bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.85rem;
+  }
+
+  .legal-links {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .dot {
+    opacity: 0.3;
+  }
+
+  @media (max-width: 768px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+</style>

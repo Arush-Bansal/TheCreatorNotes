@@ -1,0 +1,125 @@
+---
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/start-here', label: 'Start Here', isSpecial: true },
+  { href: '/strategies', label: 'Strategies' },
+  { href: '/tools', label: 'Tools' },
+];
+---
+
+<header class="navbar">
+  <div class="container nav-container">
+    <a href="/" class="logo">
+      <span class="logo-red">Creator</span>Notes
+    </a>
+    
+    <nav class="nav-links">
+      {navLinks.map(link => (
+        <a href={link.href} class={`nav-link ${link.isSpecial ? 'special-link' : ''}`}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+    
+    <div class="nav-actions">
+      <a href="/subscribe" class="btn btn-primary">Join Now</a>
+    </div>
+
+    <button class="mobile-menu-toggle" aria-label="Toggle Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    background: var(--bg-secondary);
+    border-bottom: var(--border-width) solid var(--border-color);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 1.75rem;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    color: var(--text-primary);
+  }
+
+  .logo-red {
+    color: var(--accent-red);
+  }
+
+  .nav-actions .btn-primary {
+    color: #FFFFFF !important;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    position: relative;
+  }
+
+  .nav-link:hover {
+    color: var(--accent-red);
+  }
+
+  .special-link {
+    background: var(--accent-yellow);
+    padding: 0.4rem 0.8rem;
+    border: var(--border-width) solid var(--border-color);
+    box-shadow: 2px 2px 0px var(--border-color);
+    border-radius: var(--radius-sm);
+  }
+
+  .special-link:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0px var(--border-color);
+    color: var(--text-primary);
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .mobile-menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-primary);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links, .nav-actions {
+      display: none;
+    }
+    .mobile-menu-toggle {
+      display: flex;
+    }
+  }
+</style>
