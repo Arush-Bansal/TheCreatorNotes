@@ -1,0 +1,288 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Subscribe">
+  <Navbar />
+  
+  <main class="subscribe-page">
+    <section class="subscribe-hero">
+      <div class="container narrow">
+        <div class="split-layout">
+          <div class="subscribe-content">
+            <div class="badge hand-drawn">Weekly Intel</div>
+            <h1>The <span class="highlight-red">Deep Dive</span> Newsletter</h1>
+            <p class="lead">
+              Every Sunday, we deconstruct one creator business, one algorithm change, or one high-leverage tool. No fluff, just structure.
+            </p>
+            
+            <ul class="benefits-list">
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Visual Roadmaps:</strong> PDF maps of content ecosystems.
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Tool Audits:</strong> Honest reviews of the latest creator tech.
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Early Access:</strong> Be the first to read new Creator Notes.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="subscribe-form-container">
+            <div class="form-box box-border shadow-offset">
+              <div class="form-header">
+                <span class="form-icon">📬</span>
+                <h3>Join 5,000+ Creators</h3>
+              </div>
+              
+              <form class="signup-form" onsubmit="return false;">
+                <div class="input-group">
+                  <label for="email">Email Address</label>
+                  <input type="email" id="email" placeholder="you@example.com" required />
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Send Me the Intel →</button>
+              </form>
+              
+              <p class="form-footer hand-drawn">
+                * Zero spam. Unsubscribe with one click.
+              </p>
+              
+              <!-- Annotation -->
+              <div class="form-annotation hand-drawn">
+                "Best 5 min read of my week!"
+                <div class="annotation-arrow">
+                  <svg width="40" height="40" viewBox="0 0 40 40">
+                    <path d="M10 10 Q 20 5, 30 20 L 25 20 M 30 20 L 28 12" stroke="var(--border-color)" fill="none" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="as-seen-in">
+      <div class="container text-center">
+        <p class="hand-drawn">Trusted by creators from</p>
+        <div class="logo-cloud">
+          <span>YouTube</span>
+          <span>LinkedIn</span>
+          <span>Substack</span>
+          <span>X / Twitter</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .subscribe-page {
+    padding: 6rem 0;
+    background: var(--bg-primary);
+    min-height: 80vh;
+  }
+
+  .narrow {
+    max-width: 1000px;
+  }
+
+  .split-layout {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .badge {
+    background: var(--accent-yellow);
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border: var(--border-width) solid var(--border-color);
+    margin-bottom: 1.5rem;
+    transform: rotate(-3deg);
+    font-weight: 800;
+  }
+
+  h1 {
+    font-size: 3.8rem;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+  }
+
+  .lead {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+  }
+
+  .benefits-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .benefits-list li {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .check {
+    background: var(--accent-teal);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    margin-top: 2px;
+    border: 1px solid var(--border-color);
+  }
+
+  .benefits-list strong {
+    color: var(--text-primary);
+  }
+
+  .form-box {
+    padding: 3rem;
+    background: white;
+    position: relative;
+  }
+
+  .form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .form-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .form-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .input-group label {
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  .input-group input {
+    padding: 1rem;
+    border: var(--border-width) solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-body);
+    font-size: 1rem;
+  }
+
+  .input-group input:focus {
+    outline: none;
+    border-color: var(--accent-red);
+    box-shadow: 2px 2px 0px var(--accent-red);
+  }
+
+  .btn-block {
+    width: 100%;
+    text-align: center;
+  }
+
+  .form-footer {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    text-align: center;
+  }
+
+  .form-annotation {
+    position: absolute;
+    top: -20px;
+    right: -40px;
+    background: var(--accent-yellow);
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    transform: rotate(5deg);
+    max-width: 160px;
+    line-height: 1.2;
+    z-index: 10;
+  }
+
+  .annotation-arrow {
+    position: absolute;
+    bottom: -25px;
+    left: 10px;
+  }
+
+  .as-seen-in {
+    margin-top: 8rem;
+    padding-top: 4rem;
+    border-top: 1px dashed var(--border-color);
+  }
+
+  .logo-cloud {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    opacity: 0.5;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--text-tertiary);
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 900px) {
+    .split-layout {
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+    .form-annotation {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.8rem;
+    }
+    .form-box {
+      padding: 2rem;
+    }
+  }
+</style>

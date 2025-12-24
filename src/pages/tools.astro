@@ -1,0 +1,238 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import NoteCard from '../components/NoteCard.astro';
+
+const toolCategories = [
+  {
+    name: "Production",
+    icon: "🎥",
+    tools: [
+      {
+        title: "The Creator Tech Stack",
+        description: "The essential tools for recording, editing, and managing your creator business professionally.",
+        category: "Tools",
+        href: "/notes/creator-tech-stack",
+        icon: "🛠️",
+        color: "var(--accent-teal)"
+      },
+      {
+        title: "High-Retention Editing Workflow",
+        description: "Software and plugins to speed up your editing without sacrificing quality.",
+        category: "Tools",
+        href: "/notes/editing-workflow",
+        icon: "🎞️",
+        color: "var(--accent-teal)"
+      }
+    ]
+  },
+  {
+    name: "Growth & Distribution",
+    icon: "📈",
+    tools: [
+      {
+        title: "Analytics Dashboard Setup",
+        description: "How to track the metrics that actually matter for long-term growth.",
+        category: "Tools",
+        href: "/notes/analytics-setup",
+        icon: "📊",
+        color: "var(--accent-teal)"
+      },
+      {
+        title: "Cross-Platform Scheduling",
+        description: "The best tools for managing a multi-channel presence without burning out.",
+        category: "Tools",
+        href: "/notes/scheduling-tools",
+        icon: "🗓️",
+        color: "var(--accent-teal)"
+      }
+    ]
+  },
+  {
+    name: "Monetization",
+    icon: "💰",
+    tools: [
+      {
+        title: "Sponsorship Management",
+        description: "CRM tools designed specifically for creators to manage brand deals.",
+        category: "Tools",
+        href: "/notes/sponsorship-crm",
+        icon: "🤝",
+        color: "var(--accent-teal)"
+      }
+    ]
+  }
+];
+---
+
+<Layout title="Tools">
+  <Navbar />
+  
+  <main>
+    <section class="hero-minimal tools-hero">
+      <div class="container">
+        <div class="badge hand-drawn" style="background-color: var(--accent-teal); color: white;">The Toolkit</div>
+        <h1>Creator <span class="highlight-teal">Tools</span></h1>
+        <p class="lead">
+          The curated stack we use to run a lean, high-output creator business. No bloat, just the essentials.
+        </p>
+      </div>
+    </section>
+
+    <section class="tools-directory">
+      <div class="container">
+        {toolCategories.map(category => (
+          <div class="category-block">
+            <div class="category-header">
+              <span class="cat-icon">{category.icon}</span>
+              <h2 class="hand-drawn">{category.name}</h2>
+            </div>
+            <div class="notes-grid">
+              {category.tools.map(tool => (
+                <NoteCard {...tool} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container">
+        <div class="banner-box box-border shadow-offset" style="background-color: var(--accent-indigo); color: white;">
+          <div class="banner-content">
+            <h3 style="color: white;">Missing something?</h3>
+            <p style="color: rgba(255,255,255,0.8);">We update our toolkit monthly based on what's working now.</p>
+          </div>
+          <a href="/subscribe" class="btn btn-primary" style="background-color: var(--accent-yellow); color: var(--text-primary) !important; border-color: var(--border-color);">Get Updates</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    padding-bottom: 5rem;
+  }
+
+  .tools-hero {
+    border-bottom-color: var(--accent-teal);
+  }
+
+  .hero-minimal {
+    padding: 6rem 0 4rem;
+    background: white;
+    border-bottom: var(--border-width) solid var(--border-color);
+    text-align: center;
+  }
+
+  .hero-minimal h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border: var(--border-width) solid var(--border-color);
+    margin-bottom: 1.5rem;
+    transform: rotate(2deg);
+    font-weight: 800;
+  }
+
+  .highlight-teal {
+    position: relative;
+    z-index: 1;
+  }
+
+  .highlight-teal::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: var(--accent-teal);
+    opacity: 0.15;
+    z-index: -1;
+  }
+
+  .tools-directory {
+    padding: 6rem 0;
+  }
+
+  .category-block {
+    margin-bottom: 6rem;
+  }
+
+  .category-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .cat-icon {
+    font-size: 2.5rem;
+  }
+
+  .category-header h2 {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+  }
+
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 3rem;
+  }
+
+  .cta-banner {
+    padding: 2rem 0 6rem;
+  }
+
+  .banner-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 4rem;
+    gap: 2rem;
+  }
+
+  .banner-content h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .banner-box {
+      flex-direction: column;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-minimal h1 {
+      font-size: 2.5rem;
+    }
+    .category-header h2 {
+      font-size: 1.8rem;
+    }
+  }
+</style>

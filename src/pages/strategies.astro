@@ -1,0 +1,170 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import NoteCard from '../components/NoteCard.astro';
+
+const strategies = [
+  {
+    title: "10x Your LinkedIn Growth",
+    description: "A deep dive into the algorithms and content strategies that actually work in 2024.",
+    category: "Strategy",
+    href: "/notes/linkedin-growth",
+    icon: "🚀",
+    color: "var(--accent-red)"
+  },
+  {
+    title: "Understanding the Creator Flywheel",
+    description: "Before you build, you must understand the mechanics of how content scales and sustains growth.",
+    category: "Strategy",
+    href: "/notes/creator-flywheel",
+    icon: "⚙️",
+    color: "var(--accent-red)"
+  },
+  {
+    title: "High-Value Niche Identification",
+    description: "Why 'generalist' creators struggle and how to find your specific authority in a crowded market.",
+    category: "Strategy",
+    href: "/notes/find-niche",
+    icon: "🎯",
+    color: "var(--accent-red)"
+  },
+  {
+    title: "The Content Pillar System",
+    description: "Learn how to turn one big idea into 20 pieces of high-performing content across platforms.",
+    category: "Strategy",
+    href: "/notes/scripting-retention",
+    icon: "🏛️",
+    color: "var(--accent-red)"
+  },
+  {
+    title: "Retention-First Scripting",
+    description: "How to write scripts that keep viewers hooked from the first second to the last.",
+    category: "Strategy",
+    href: "/notes/scripting-retention",
+    icon: "✍️",
+    color: "var(--accent-red)"
+  }
+];
+---
+
+<Layout title="Strategies">
+  <Navbar />
+  
+  <main>
+    <section class="hero-minimal">
+      <div class="container">
+        <div class="badge hand-drawn" style="background-color: var(--accent-red); color: white;">Playbooks</div>
+        <h1>Creator <span class="highlight-red">Strategies</span></h1>
+        <p class="lead">
+          Tactical blueprints for building, scaling, and sustaining your presence in the creator economy.
+        </p>
+      </div>
+    </section>
+
+    <section class="content-grid-section">
+      <div class="container">
+        <div class="notes-grid">
+          {strategies.map(note => (
+            <NoteCard {...note} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-banner">
+      <div class="container">
+        <div class="banner-box box-border shadow-offset">
+          <div class="banner-content">
+            <h3>Want these strategies in your inbox?</h3>
+            <p>Every week we break down a new creator strategy in-depth.</p>
+          </div>
+          <a href="/subscribe" class="btn btn-primary">Subscribe Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    padding-bottom: 5rem;
+  }
+
+  .hero-minimal {
+    padding: 6rem 0 4rem;
+    background: white;
+    border-bottom: var(--border-width) solid var(--border-color);
+    text-align: center;
+  }
+
+  .hero-minimal h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1.4rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border: var(--border-width) solid var(--border-color);
+    margin-bottom: 1.5rem;
+    transform: rotate(-2deg);
+    font-weight: 800;
+  }
+
+  .content-grid-section {
+    padding: 6rem 0;
+  }
+
+  .notes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 3rem;
+  }
+
+  .cta-banner {
+    padding: 2rem 0 6rem;
+  }
+
+  .banner-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 4rem;
+    background: var(--accent-yellow);
+    gap: 2rem;
+  }
+
+  .banner-content h3 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .banner-content p {
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  @media (max-width: 900px) {
+    .banner-box {
+      flex-direction: column;
+      text-align: center;
+      padding: 3rem 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-minimal h1 {
+      font-size: 2.5rem;
+    }
+  }
+</style>
