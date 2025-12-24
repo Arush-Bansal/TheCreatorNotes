@@ -1,9 +1,9 @@
 ---
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/start-here', label: 'Start Here', isSpecial: true },
-  { href: '/strategies', label: 'Strategies' },
-  { href: '/tools', label: 'Tools' },
+  { href: "/", label: "Home" },
+  { href: "/start-here", label: "Start Here", isSpecial: true },
+  { href: "/strategies", label: "Strategies" },
+  { href: "/tools", label: "Tools" },
 ];
 ---
 
@@ -12,23 +12,30 @@ const navLinks = [
     <a href="/" class="logo">
       The<span class="logo-red">Creator</span>Notes
     </a>
-    
-    <nav class="nav-links">
-      {navLinks.map(link => (
-        <a href={link.href} class={`nav-link ${link.isSpecial ? 'special-link' : ''}`}>
-          {link.label}
-        </a>
-      ))}
-    </nav>
-    
-    <div class="nav-actions">
-      <a href="/subscribe" class="btn btn-primary">Join Now</a>
+
+    <div class="nav-menu">
+      <nav class="nav-links">
+        {
+          navLinks.map((link) => (
+            <a
+              href={link.href}
+              class={`nav-link ${link.isSpecial ? "special-link" : ""}`}
+            >
+              {link.label}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class="nav-actions">
+        <a href="/subscribe" class="btn btn-primary">Join Now</a>
+      </div>
     </div>
 
     <button class="mobile-menu-toggle" aria-label="Toggle Menu">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span class="bar top"></span>
+      <span class="bar middle"></span>
+      <span class="bar bottom"></span>
     </button>
   </div>
 </header>
@@ -52,11 +59,17 @@ const navLinks = [
     width: 100%;
   }
 
+  .nav-menu {
+    display: contents;
+  }
+
   .logo {
     font-size: 1.75rem;
     font-weight: 900;
     letter-spacing: -0.04em;
     color: var(--text-primary);
+    z-index: 1001; /* Keep logo above menu */
+    position: relative;
   }
 
   .logo-red {
@@ -64,7 +77,7 @@ const navLinks = [
   }
 
   .nav-actions .btn-primary {
-    color: #FFFFFF !important;
+    color: #ffffff !important;
   }
 
   .nav-links {
@@ -78,6 +91,7 @@ const navLinks = [
     font-size: 0.95rem;
     color: var(--text-primary);
     position: relative;
+    font-family: var(--font-heading);
   }
 
   .nav-link:hover {
@@ -101,25 +115,145 @@ const navLinks = [
   .mobile-menu-toggle {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 1001;
+    position: relative;
   }
 
-  .mobile-menu-toggle span {
-    display: block;
-    width: 25px;
+  .bar {
+    width: 100%;
     height: 3px;
     background-color: var(--text-primary);
+    transition: all 0.3s ease;
+    border-radius: 99px;
   }
 
+  /* Mobile Styles */
   @media (max-width: 768px) {
-    .nav-links, .nav-actions {
-      display: none;
+    .nav-container {
+      /* Remove wrap, we want logo left, toggle right */
+      flex-wrap: nowrap;
     }
+
+    .nav-menu {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 80px; /* Match navbar height */
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 80px);
+      background-color: var(--bg-primary);
+      padding: 2rem 1.5rem;
+      align-items: center;
+      justify-content: start;
+      gap: 2rem;
+      transform: translateX(100%);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      border-top: var(--border-width) solid var(--border-color);
+      overflow-y: auto;
+    }
+
+    .navbar.active .nav-menu {
+      transform: translateX(0);
+    }
+
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      font-size: 1.5rem;
+      width: 100%;
+      text-align: center;
+      padding: 0.5rem;
+      border-radius: var(--radius-md);
+    }
+
+    .nav-link:not(.special-link):hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    .special-link {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+      padding: 0.75rem;
+      font-size: 1.25rem;
+      box-shadow: 4px 4px 0px var(--border-color);
+    }
+
     .mobile-menu-toggle {
       display: flex;
     }
+
+    /* Hamburger Animation */
+    .navbar.active .bar.top {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .navbar.active .bar.middle {
+      opacity: 0;
+    }
+
+    .navbar.active .bar.bottom {
+      transform: translateY(-10px) rotate(-45deg); /* Adjusted for height */
+    }
+
+    .nav-actions {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: auto; /* Push to bottom slightly, or just flow naturally */
+      padding-bottom: 2rem;
+    }
+
+    .nav-actions .btn {
+      width: 100%;
+      max-width: 300px;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.25rem;
+    }
   }
 </style>
+
+<script>
+  const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+  const navbar = document.querySelector(".navbar");
+  const navMenu = document.querySelector(".nav-menu");
+
+  if (mobileMenuToggle && navbar) {
+    mobileMenuToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      navbar.classList.toggle("active");
+      const isExpanded = navbar.classList.contains("active");
+      mobileMenuToggle.setAttribute(
+        "aria-expanded",
+        isExpanded ? "true" : "false",
+      );
+
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = isExpanded ? "hidden" : "";
+    });
+
+    // Close menu when clicking outside (on the content, though it covers screen now)
+    // Or clicking a link
+    if (navMenu) {
+      navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navbar.classList.remove("active");
+          mobileMenuToggle.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        });
+      });
+    }
+  }
+</script>
