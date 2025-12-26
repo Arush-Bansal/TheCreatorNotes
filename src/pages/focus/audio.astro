@@ -1,0 +1,198 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import NoteCard from "../../components/NoteCard.astro";
+
+const resources = [
+    {
+        title: "Crystal Clear Audio",
+        description:
+            "Removing background noise and EQing your voice for that 'radio' sound.",
+        category: "Production",
+        href: "/notes/clear-audio",
+        icon: "🎙️",
+        color: "var(--accent-red)",
+    },
+    {
+        title: "Podcast Launch Plan",
+        description:
+            "From concept to RSS feed: A 4-week timeline for launching your show.",
+        category: "Strategy",
+        href: "/notes/podcast-launch",
+        icon: "🚀",
+        color: "var(--accent-red)",
+    },
+    {
+        title: "Interview Masterclass",
+        description: "How to ask questions that get stories, not just answers.",
+        category: "Communication",
+        href: "/notes/interview-skills",
+        icon: "💬",
+        color: "var(--accent-red)",
+    },
+    {
+        title: "Voice Acting Basics",
+        description:
+            "Using tone, pacing, and emphasis to keep listeners engaged.",
+        category: "Performance",
+        href: "/notes/voice-acting",
+        icon: "🗣️",
+        color: "var(--accent-red)",
+    },
+];
+---
+
+<Layout title="Audio Focus">
+    <Navbar />
+
+    <main>
+        <section class="hero-minimal">
+            <div class="container">
+                <div
+                    class="badge hand-drawn"
+                    style="background-color: var(--accent-red); color: white;"
+                >
+                    Focus Domain
+                </div>
+                <h1>Mastering <span class="highlight-red">Audio</span></h1>
+                <p class="lead">
+                    Strategies for podcasting, voiceovers, and sonic
+                    storytelling.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-grid-section">
+            <div class="container">
+                <div class="notes-grid">
+                    {resources.map((note) => <NoteCard {...note} />)}
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="container">
+                <div class="banner-box box-border shadow-offset">
+                    <div class="banner-content">
+                        <h3>Start your show?</h3>
+                        <p>Download our equipment buying guide.</p>
+                    </div>
+                    <a href="/subscribe" class="btn btn-primary">Get Guide</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    main {
+        padding-bottom: 5rem;
+    }
+
+    .hero-minimal {
+        padding: 6rem 0 4rem;
+        background: white;
+        border-bottom: var(--border-width) solid var(--border-color);
+        text-align: center;
+    }
+
+    .hero-minimal h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .highlight-red {
+        color: var(--accent-red);
+        position: relative;
+    }
+
+    .highlight-red::after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 15px;
+        background: var(--accent-red);
+        opacity: 0.2;
+        z-index: -1;
+    }
+
+    .lead {
+        font-size: 1.4rem;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.2rem 0.8rem;
+        border: var(--border-width) solid var(--border-color);
+        margin-bottom: 1.5rem;
+        transform: rotate(-2deg);
+        font-weight: 800;
+    }
+
+    .content-grid-section {
+        padding: 6rem 0;
+    }
+
+    .notes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 3rem;
+    }
+
+    .cta-banner {
+        padding: 2rem 0 6rem;
+    }
+
+    .banner-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 4rem;
+        background: var(--accent-red);
+        color: white;
+        gap: 2rem;
+    }
+
+    .banner-box .btn-primary {
+        background: white;
+        color: var(--text-primary);
+        border: 2px solid var(--text-primary);
+    }
+
+    .banner-box .btn-primary:hover {
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .banner-content p {
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .banner-content h3 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+        .banner-box {
+            flex-direction: column;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-minimal h1 {
+            font-size: 2.5rem;
+        }
+    }
+</style>

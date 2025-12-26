@@ -1,0 +1,199 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import NoteCard from "../../components/NoteCard.astro";
+
+const resources = [
+    {
+        title: "Color Theory for Non-Designers",
+        description:
+            "How to pick palettes that look professional and evoke emotions.",
+        category: "Foundations",
+        href: "/notes/color-theory",
+        icon: "🎨",
+        color: "var(--accent-teal)",
+    },
+    {
+        title: "Typography Rules",
+        description:
+            "The 80/20 of fonts, spacing, and hierarchy for readable content.",
+        category: "Typography",
+        href: "/notes/typography-rules",
+        icon: "🔤",
+        color: "var(--accent-teal)",
+    },
+    {
+        title: "Visual Hierarchy Guide",
+        description:
+            "Controlling where your user looks first, second, and last.",
+        category: "UI/UX",
+        href: "/notes/visual-hierarchy",
+        icon: "👁️",
+        color: "var(--accent-teal)",
+    },
+    {
+        title: "Asset Management Spec",
+        description:
+            "Naming conventions and folder structures for a messy creative life.",
+        category: "Workflow",
+        href: "/notes/asset-management",
+        icon: "📂",
+        color: "var(--accent-teal)",
+    },
+];
+---
+
+<Layout title="Design Focus">
+    <Navbar />
+
+    <main>
+        <section class="hero-minimal">
+            <div class="container">
+                <div
+                    class="badge hand-drawn"
+                    style="background-color: var(--accent-teal); color: white;"
+                >
+                    Focus Domain
+                </div>
+                <h1>Mastering <span class="highlight-teal">Design</span></h1>
+                <p class="lead">
+                    Visual communication that amplifies your message and builds
+                    trust.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-grid-section">
+            <div class="container">
+                <div class="notes-grid">
+                    {resources.map((note) => <NoteCard {...note} />)}
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="container">
+                <div class="banner-box box-border shadow-offset">
+                    <div class="banner-content">
+                        <h3>Need assets?</h3>
+                        <p>Download our starter Figma kit.</p>
+                    </div>
+                    <a href="/subscribe" class="btn btn-primary">Get Kit</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    main {
+        padding-bottom: 5rem;
+    }
+
+    .hero-minimal {
+        padding: 6rem 0 4rem;
+        background: white;
+        border-bottom: var(--border-width) solid var(--border-color);
+        text-align: center;
+    }
+
+    .hero-minimal h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .highlight-teal {
+        color: var(--accent-teal);
+        position: relative;
+    }
+
+    .highlight-teal::after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 15px;
+        background: var(--accent-teal);
+        opacity: 0.2;
+        z-index: -1;
+    }
+
+    .lead {
+        font-size: 1.4rem;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.2rem 0.8rem;
+        border: var(--border-width) solid var(--border-color);
+        margin-bottom: 1.5rem;
+        transform: rotate(-2deg);
+        font-weight: 800;
+    }
+
+    .content-grid-section {
+        padding: 6rem 0;
+    }
+
+    .notes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 3rem;
+    }
+
+    .cta-banner {
+        padding: 2rem 0 6rem;
+    }
+
+    .banner-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 4rem;
+        background: var(--accent-teal);
+        color: white;
+        gap: 2rem;
+    }
+
+    .banner-box .btn-primary {
+        background: white;
+        color: var(--text-primary);
+        border: 2px solid var(--text-primary);
+    }
+
+    .banner-box .btn-primary:hover {
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .banner-content p {
+        font-weight: 600;
+        color: rgba(255, 255, 255, 0.9);
+    }
+
+    .banner-content h3 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+        .banner-box {
+            flex-direction: column;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-minimal h1 {
+            font-size: 2.5rem;
+        }
+    }
+</style>

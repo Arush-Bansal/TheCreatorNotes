@@ -1,0 +1,202 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import NoteCard from "../../components/NoteCard.astro";
+
+const resources = [
+    {
+        title: "Viral Hooks Library",
+        description:
+            "50+ plug-and-play opening lines for Twitter/X and LinkedIn.",
+        category: "Copywriting",
+        href: "/notes/viral-hooks",
+        icon: "🎣",
+        color: "var(--accent-yellow)",
+    },
+    {
+        title: "Newsletter Growth Engine",
+        description:
+            "How to simplify your writing process and never run out of ideas.",
+        category: "Process",
+        href: "/notes/newsletter-engine",
+        icon: "✉️",
+        color: "var(--accent-yellow)",
+    },
+    {
+        title: "Storytelling Frameworks",
+        description:
+            "The Hero's Journey, ABT, and other structures for compelling narratives.",
+        category: "Storytelling",
+        href: "/notes/story-structures",
+        icon: "📖",
+        color: "var(--accent-yellow)",
+    },
+    {
+        title: "Cold Email Templates",
+        description:
+            "Outreach scripts that actually get replies from sponsors and guests.",
+        category: "Business",
+        href: "/notes/cold-emails",
+        icon: "💼",
+        color: "var(--accent-yellow)",
+    },
+];
+---
+
+<Layout title="Writing Focus">
+    <Navbar />
+
+    <main>
+        <section class="hero-minimal">
+            <div class="container">
+                <div
+                    class="badge hand-drawn"
+                    style="background-color: var(--accent-yellow); color: var(--text-primary);"
+                >
+                    Focus Domain
+                </div>
+                <h1>Mastering <span class="highlight-yellow">Writing</span></h1>
+                <p class="lead">
+                    The foundation of all content. Clarify your thinking and
+                    captivate readers.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-grid-section">
+            <div class="container">
+                <div class="notes-grid">
+                    {resources.map((note) => <NoteCard {...note} />)}
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-banner">
+            <div class="container">
+                <div class="banner-box box-border shadow-offset">
+                    <div class="banner-content">
+                        <h3>Writer's block?</h3>
+                        <p>Get our 30-day writing prompt calendar.</p>
+                    </div>
+                    <a href="/subscribe" class="btn btn-primary">Get Calendar</a
+                    >
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    main {
+        padding-bottom: 5rem;
+    }
+
+    .hero-minimal {
+        padding: 6rem 0 4rem;
+        background: white;
+        border-bottom: var(--border-width) solid var(--border-color);
+        text-align: center;
+    }
+
+    .hero-minimal h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .highlight-yellow {
+        color: var(--text-primary); /* Yellow text is hard to read */
+        position: relative;
+        z-index: 1;
+    }
+
+    .highlight-yellow::after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 25px; /* Thicker for yellow highlight */
+        background: var(--accent-yellow);
+        opacity: 0.6;
+        z-index: -1;
+        transform: rotate(-1deg);
+    }
+
+    .lead {
+        font-size: 1.4rem;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.2rem 0.8rem;
+        border: var(--border-width) solid var(--border-color);
+        margin-bottom: 1.5rem;
+        transform: rotate(-2deg);
+        font-weight: 800;
+    }
+
+    .content-grid-section {
+        padding: 6rem 0;
+    }
+
+    .notes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 3rem;
+    }
+
+    .cta-banner {
+        padding: 2rem 0 6rem;
+    }
+
+    .banner-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 3rem 4rem;
+        background: var(--accent-yellow);
+        color: var(--text-primary);
+        gap: 2rem;
+    }
+
+    .banner-box .btn-primary {
+        background: white;
+        color: var(--text-primary);
+        border: 2px solid var(--text-primary);
+    }
+
+    .banner-box .btn-primary:hover {
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .banner-content p {
+        font-weight: 600;
+        color: var(--text-secondary);
+    }
+
+    .banner-content h3 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 900px) {
+        .banner-box {
+            flex-direction: column;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-minimal h1 {
+            font-size: 2.5rem;
+        }
+    }
+</style>
