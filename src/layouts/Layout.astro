@@ -1,12 +1,16 @@
 ---
-import '../styles/global.css';
+import "../styles/global.css";
+import PostHog from "../components/PostHog.astro";
 
 interface Props {
 	title: string;
 	description?: string;
 }
 
-const { title, description = "Strategies, tools, and starter maps for modern creators." } = Astro.props;
+const {
+	title,
+	description = "Strategies, tools, and starter maps for modern creators.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -18,9 +22,13 @@ const { title, description = "Strategies, tools, and starter maps for modern cre
 		<meta name="generator" content={Astro.generator} />
 		<title>{title} | The Creator Notes</title>
 		<meta name="description" content={description} />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&family=Permanent+Marker&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&family=Permanent+Marker&display=swap"
+			rel="stylesheet"
+		/>
+		<PostHog />
 	</head>
 	<body>
 		<slot />
