@@ -1,0 +1,730 @@
+[
+  {
+    "slug": "linkedin-growth",
+    "title": "10x Your LinkedIn Growth",
+    "category": "Strategy",
+    "date": "Dec 20, 2024",
+    "lead": "LinkedIn is no longer just a resume site; it's a high-trust content machine. To 10x your growth, you must move from 'job seeker' to 'thought leader'.",
+    "problem": "Most people post corporate updates that nobody cares about. The algorithm prioritizes professional insights that spark conversation, skip-the-fluff tutorials, and authentic storytelling.",
+    "insight": "The first 60 minutes after posting are critical. High engagement early on signals the algorithm to push your content to 2nd and 3rd-degree connections.",
+    "steps": [
+      {
+        "title": "Hook within 3 lines",
+        "desc": "LinkedIn truncates posts after 3 lines. If you don't 'stop the scroll' there, the rest of your post is invisible."
+      },
+      {
+        "title": "Comment before you post",
+        "desc": "Spend 15 minutes engaging with your target audience's posts before you hit publish. This warms up your visibility."
+      },
+      {
+        "title": "Use the 'Golden Hour'",
+        "desc": "Post between 8 AM and 10 AM in your target audience's timezone for maximum reach."
+      }
+    ],
+    "quote": "Your network is your net worth, but only if they actually see your value.",
+    "nextSlug": "email-marketing",
+    "nextTitle": "Email Marketing for Creators"
+  },
+  {
+    "slug": "creator-tech-stack",
+    "title": "The Creator Tech Stack",
+    "category": "Tools",
+    "date": "Dec 22, 2024",
+    "lead": "You don't need a $10,000 RED camera to start. You need a system that removes friction from your creative process.",
+    "problem": "Creators get 'Gear Acquisition Syndrome' (GAS), buying expensive tools they don't know how to use. Focus on the 'Essential Three': High-quality audio, stable lighting, and an organized workspace.",
+    "insight": "Audio is 70% of video. People will watch a blurry video with great sound, but they will turn off a 4K video with static-heavy audio.",
+    "steps": [
+      {
+        "title": "Master Your DAW",
+        "desc": "Whether it's Audacity or Adobe Audition, learn how to remove background noise and normalize loudness."
+      },
+      {
+        "title": "Two-Light Setup",
+        "desc": "A key light and a fill light will make your video look professional instantly, even on a smartphone."
+      },
+      {
+        "title": "Centralized Task Management",
+        "desc": "Use Notion or Trello to track your workflow from idea to distribution. Never lose a spark of inspiration again."
+      }
+    ],
+    "quote": "The best tool is the one you actually use. Complexity is the enemy of consistency.",
+    "nextSlug": "editing-workflow",
+    "nextTitle": "High-Retention Editing Workflow"
+  },
+  {
+    "slug": "editing-workflow",
+    "title": "High-Retention Editing Workflow",
+    "category": "Strategy",
+    "date": "Dec 24, 2024",
+    "lead": "Retention isn't about fast cuts; it's about managing the viewer's dopamine levels. Here's how to edit for the modern attention span.",
+    "problem": "New editors over-use transitions or stay on one shot for too long. You need to provide a 'visual reset' every 3-5 seconds to keep the brain engaged.",
+    "insight": "The first 30 seconds of a video determine 80% of its performance. Front-load your best visuals and most compelling hooks.",
+    "steps": [
+      {
+        "title": "The J-Cut and L-Cut",
+        "desc": "Smooth out transitions by having the audio lead the video (J-cut) or vice versa (L-cut). It feels more natural to the human brain."
+      },
+      {
+        "title": "Strategic B-Roll",
+        "desc": "Don't just show your face. Use B-roll to emphasize key points or provide a visual metaphor for what you're saying."
+      },
+      {
+        "title": "Sound Design Layers",
+        "desc": "Add subtle whooshes, atmospheric music, and foley. A rich soundscape makes video feel high-budget."
+      }
+    ],
+    "quote": "Edit with a scalpel, not a chainsaw. Every frame should earn its keep.",
+    "nextSlug": "scripting-retention",
+    "nextTitle": "Scripting for Retention"
+  },
+  {
+    "slug": "monetization-map",
+    "title": "Monetization Starter Map",
+    "category": "Map",
+    "date": "Jan 02, 2025",
+    "lead": "Don't wait for brand deals. Build a resilient income by diversifying your revenue streams from day one.",
+    "problem": "Relying on platform ad-revenue is like building a house on rented land. If the algorithm changes, your income vanishes. You need owned monetization.",
+    "insight": "The highest-margin product a creator can sell is digital knowledge. Courses, templates, and consulting have near-zero overhead.",
+    "steps": [
+      {
+        "title": "Identify Low-Hanging Fruit",
+        "desc": "What do people ask your advice on? Turn that into a $10 template or checklist."
+      },
+      {
+        "title": "Affiliate Integration",
+        "desc": "Only promote tools you actually use. Authenticity is the only thing that sells in the long run."
+      },
+      {
+        "title": "Tiered Offerings",
+        "desc": "Have something for everyone: Free value (newsletter), Low-ticket (e-book), and High-ticket (coaching)."
+      }
+    ],
+    "quote": "If you don't find a way to make money while you sleep, you will work until you die.",
+    "nextSlug": "brand-deals",
+    "nextTitle": "Brand Deal Negotiation"
+  },
+  {
+    "slug": "scripting-retention",
+    "title": "Scripting for Retention",
+    "category": "Strategy",
+    "date": "Jan 04, 2025",
+    "lead": "A great video starts with a great script. Stop 'winging it' and start engineering your retention curves.",
+    "problem": "Creators ramble too much in the intro. You have 3 seconds to prove you're not wasting the viewer's time. Get to the point immediately.",
+    "insight": "The 'Story Gap' is your best friend. Open a loop in the viewer's mind and don't close it until the very end of the video.",
+    "steps": [
+      {
+        "title": "The 3-Part Hook",
+        "desc": "Identify the problem, promise a specific solution, and establish your authority in under 10 seconds."
+      },
+      {
+        "title": "Value Per Second (VPS)",
+        "desc": "Read your script out loud. If a sentence doesn't advance the plot or provide value, delete it."
+      },
+      {
+        "title": "The 'What's Next' Transition",
+        "desc": "Bridge segments by telling the viewer why the next piece of information is critical for them to know."
+      }
+    ],
+    "quote": "Words are the blueprint. If the blueprint is flawed, the building won't stand.",
+    "nextSlug": "monetization-map",
+    "nextTitle": "Monetization Starter Map"
+  },
+  {
+    "slug": "email-marketing",
+    "title": "Email Marketing for Creators",
+    "category": "Strategy",
+    "date": "Jan 05, 2025",
+    "lead": "Your email list is the only platform you truly own. It is your ultimate insurance policy against algorithm changes.",
+    "problem": "Creators treat newsletters like RSS feeds. A newsletter should be an intimate conversation, not a list of links. Focus on personal stories.",
+    "insight": "Every email must have a single primary CTA. Don't confuse your readers with 5 different buttons.",
+    "steps": [
+      {
+        "title": "The Lead Magnet",
+        "desc": "Give away a high-value resource in exchange for an email address. It should solve a specific, immediate problem."
+      },
+      {
+        "title": "Welcome Sequence",
+        "desc": "Set up a 3-day automated sequence that introduces your brand and provides immediate value."
+      },
+      {
+        "title": "Consistency Over Frequency",
+        "desc": "It's better to send one great email every two weeks than three mediocre ones every week."
+      }
+    ],
+    "quote": "Algorithms come and go. An email address is forever (almost).",
+    "nextSlug": "creator-flywheel",
+    "nextTitle": "Understanding the Creator Flywheel"
+  },
+  {
+    "slug": "brand-deals",
+    "title": "Brand Deal Negotiation",
+    "category": "Tools",
+    "date": "Jan 06, 2025",
+    "lead": "Stop accepting the first offer. You aren't selling a post; you're selling access to a vetted, high-trust community.",
+    "problem": "Creators underprice themselves because they look at follower counts. Brands care about engagement, demographics, and conversion potential.",
+    "insight": "The party that mentions price first usually loses. Always ask for their budget range and campaign goals before quoting.",
+    "steps": [
+      {
+        "title": "Media Kit Mastery",
+        "desc": "Create a one-page PDF showing your audience stats, past results, and high-quality examples of your work."
+      },
+      {
+        "title": "The Value-Add",
+        "desc": "Bundle your services. Instead of one post, offer a package with stories, newsletter mentions, and usage rights."
+      },
+      {
+        "title": "Usage Rights & Exclusivity",
+        "desc": "Always charge extra if the brand wants to use your face in their ads or demands you don't work with competitors."
+      }
+    ],
+    "quote": "Know your worth, then add tax. You are a media company, not just a profile.",
+    "nextSlug": "find-niche",
+    "nextTitle": "Identifying Your High-Value Niche"
+  },
+  {
+    "slug": "creator-flywheel",
+    "title": "Understanding the Creator Flywheel",
+    "category": "Strategy",
+    "date": "Jan 06, 2025",
+    "lead": "Growth becomes effortless when your content, community, and commerce feed into each other in a virtuous cycle.",
+    "problem": "Most creators treat every post as a one-off event. You need to build assets that gain momentum over time without extra effort.",
+    "insight": "Content brings people in (Discovery), Community keeps them there (Trust), and Commerce funds the content (Sustainability).",
+    "steps": [
+      {
+        "title": "Repurpose Ruthlessly",
+        "desc": "One YouTube video becomes 5 Shorts, 3 LinkedIn posts, and a Twitter thread. Efficiency is the key to scaling."
+      },
+      {
+        "title": "Feedback Loops",
+        "desc": "Use your community's comments and questions to generate your next piece of content. They tell you what they want."
+      },
+      {
+        "title": "Reinvest Early",
+        "desc": "Use your first $1,000 to hire an editor or buy a better microphone. Buy your time back to focus on the 'Big Idea'."
+      }
+    ],
+    "quote": "The hardest part of a flywheel is the first rotation. After that, it's just about keeping it spinning.",
+    "nextSlug": "linkedin-growth",
+    "nextTitle": "10x Your LinkedIn Growth"
+  },
+  {
+    "slug": "find-niche",
+    "title": "Identifying Your High-Value Niche",
+    "category": "Strategy",
+    "date": "Jan 06, 2025",
+    "lead": "In a world of generalists, the specialist wins. Don't be a 'lifestyle creator'; be the person who solves one specific problem better than anyone else.",
+    "problem": "Creators are afraid that narrowing their focus will limit their audience. In reality, it makes them 'undeniable' to the right people.",
+    "insight": "Your niche is the intersection of what you're good at, what you love, and what people are willing to pay for.",
+    "steps": [
+      {
+        "title": "The 'Ikigai' Method",
+        "desc": "Map out your skills and interests. Look for the 'boring' overlap—that's usually where the money is."
+      },
+      {
+        "title": "Competitor Audit",
+        "desc": "Find creators in your space. Look at their comments. What are people still confused about? That's your gap."
+      },
+      {
+        "title": "The 'I Help' Statement",
+        "desc": "Can you finish this sentence? 'I help [audience] achieve [result] through [mechanism].' If not, you're too broad."
+      }
+    ],
+    "quote": "Go an inch wide and a mile deep. The riches are in the niches.",
+    "nextSlug": "creator-tech-stack",
+    "nextTitle": "The Creator Tech Stack"
+  },
+  {
+    "slug": "analytics-setup",
+    "title": "Analytics Dashboard Setup",
+    "category": "Tools",
+    "date": "Jan 06, 2025",
+    "lead": "Stop looking at vanity metrics. You need a dashboard that tells you what to do next, not just how many people liked your post.",
+    "problem": "Creators get overwhelmed by 'Big Data' and end up ignoring it. You only need to track three things: Attraction (new eyes), Retention (returning eyes), and Conversion (dollars).",
+    "insight": "The most important metric is 'Return Visitor Rate'. It tells you if you're building a community or just getting lucky with the algorithm.",
+    "steps": [
+      {
+        "title": "Choose One Source of Truth",
+        "desc": "Pick one tool (like Google Analytics or Plausible) and stick to it. Discrepancies between tools will drive you crazy."
+      },
+      {
+        "title": "Set Up Conversion Goals",
+        "desc": "Define what a 'win' looks like—a newsletter signup, a product click, or a 50% video completion rate."
+      },
+      {
+        "title": "Weekly Audit Rhythm",
+        "desc": "Spend 30 minutes every Sunday reviewing the numbers. Look for patterns, not individual spikes."
+      }
+    ],
+    "quote": "If you can't measure it, you can't improve it. But if you measure everything, you'll improve nothing.",
+    "nextSlug": "scheduling-tools",
+    "nextTitle": "Cross-Platform Scheduling"
+  },
+  {
+    "slug": "scheduling-tools",
+    "title": "Cross-Platform Scheduling",
+    "category": "Tools",
+    "date": "Jan 06, 2025",
+    "lead": "The key to multi-platform growth isn't working harder; it's working smarter through intelligent automation and batching.",
+    "problem": "Manual posting is a flow-state killer. If you're logging into 5 different apps every day to hit 'publish', you're losing hours of creative energy.",
+    "insight": "The goal of scheduling isn't 'set and forget'. It's to free up your 'live' time for community engagement and high-level strategy.",
+    "steps": [
+      {
+        "title": "The Batching Technique",
+        "desc": "Create all your social content in one 4-hour block. Then, use a scheduler (like Buffer or Hootsuite) to drip it out over a week."
+      },
+      {
+        "title": "Platform-Specific Optimization",
+        "desc": "Don't just auto-post the same thing everywhere. Tweak the captions and hashtags for each platform's unique culture."
+      },
+      {
+        "title": "Mobile-First Review",
+        "desc": "Always check your scheduled posts on a mobile device. That's where 90% of your audience will see them."
+      }
+    ],
+    "quote": "Consistency is king, but automation is the king's advisor. You need both to rule your niche.",
+    "nextSlug": "sponsorship-crm",
+    "nextTitle": "Sponsorship Management"
+  },
+  {
+    "slug": "sponsorship-crm",
+    "title": "Sponsorship Management",
+    "category": "Tools",
+    "date": "Jan 06, 2025",
+    "lead": "Brand deals are professional relationships, not one-off transactions. Manage them like a pro using a dedicated CRM system.",
+    "problem": "Losing track of emails, missing deadlines, and forgetting to follow up on payments makes you look like an amateur. Professionalism earns you 3x higher rates.",
+    "insight": "The real money is in the 'Renewal'. It's 10x easier to resell to an existing sponsor than to find a new one.",
+    "steps": [
+      {
+        "title": "Active Pipeline Tracking",
+        "desc": "Move every brand through stages: Outreach → Negotiation → Contracted → Content Live → Paid."
+      },
+      {
+        "title": "Automated Follow-ups",
+        "desc": "If a brand hasn't replied in 3 days, follow up. If they haven't paid in 30 days, follow up. Don't be shy."
+      },
+      {
+        "title": "Post-Campaign Reporting",
+        "desc": "Send a 'Success Report' after every deal. Show them the stats and tell them why they should work with you again."
+      }
+    ],
+    "quote": "Organization is the silent partner of success. A clean CRM is a full bank account.",
+    "nextSlug": "monetization-map",
+    "nextTitle": "Monetization Starter Map"
+  },
+  {
+    "slug": "lighting-101",
+    "title": "Lighting 101",
+    "category": "Production",
+    "date": "Jan 07, 2025",
+    "lead": "Lighting is the difference between a video that looks 'cheap' and a video that looks 'cinematic'.",
+    "problem": "New creators rely on overhead room lights which create harsh shadows under eyes. You need controlled, directional light to create depth.",
+    "insight": "The 'Three-Point Setup' (Key, Fill, and Backlight) is the industry standard for a reason. It creates a 3D feel on a 2D screen.",
+    "steps": [
+      {
+        "title": "Establish Your Key Light",
+        "desc": "Place your brightest light at a 45-degree angle to your face. This creates 'Rembrandt lighting' and natural shadows."
+      },
+      {
+        "title": "Add a Backlight",
+        "desc": "Place a light behind you to separate your silhouette from the background. It adds instant 'pop'."
+      },
+      {
+        "title": "Diffuse Everything",
+        "desc": "Use softboxes or even a white sheet to soften the light. Hard light highlights skin imperfections."
+      }
+    ],
+    "quote": "Light is the language of photography and video. If you don't speak it, you're just making noise.",
+    "nextSlug": "editing-workflow",
+    "nextTitle": "High-Retention Editing Workflow"
+  },
+  {
+    "slug": "thumbnails",
+    "title": "YouTube Thumbnails",
+    "category": "Growth",
+    "date": "Jan 07, 2025",
+    "lead": "The thumbnail is the packaging for your content. If the packaging is bad, nobody will ever see the product.",
+    "problem": "Creators try to pack too much information into a tiny image. At 200px wide, complexity is your enemy. You need one clear focal point.",
+    "insight": "Contrast is more important than resolution. High-contrast colors and faces with clear emotions are what trigger the primitive brain to click.",
+    "steps": [
+      {
+        "title": "The Rule of One",
+        "desc": "Have one main subject, one clear emotion, and ideally no more than 3 words of text."
+      },
+      {
+        "title": "Visual Storytelling",
+        "desc": "The thumbnail shouldn't just repeat the title; it should complement it. Show the 'Before' or the 'Result'."
+      },
+      {
+        "title": "A/B Testing Habits",
+        "desc": "Always design two versions of a thumbnail. Swap them after 24 hours if the CTR is below your average."
+      }
+    ],
+    "quote": "A thumbnail is a promise. Your video is the delivery on that promise.",
+    "nextSlug": "linkedin-growth",
+    "nextTitle": "10x Your LinkedIn Growth"
+  },
+  {
+    "slug": "camera-gear",
+    "title": "Camera Gear Guide",
+    "category": "Gear",
+    "date": "Jan 07, 2025",
+    "lead": "You don't need the latest mirrorless camera to start. You need a device that stays out of your way and lets you create.",
+    "problem": "Spending thousands on gear before you have a workflow is the fastest way to quit. The best camera is the one that's already in your pocket.",
+    "insight": "Lens quality and lighting matter 10x more than the sensor inside your camera body.",
+    "steps": [
+      {
+        "title": "Smartphone Supremacy",
+        "desc": "Modern iPhones and Androids can shoot 4K HDR. Spend your money on a tripod and a microphone first."
+      },
+      {
+        "title": "The Entry-Level Mirrorless",
+        "desc": "If you must upgrade, look for 'webcam' functionality and a flip-out screen so you can monitor yourself."
+      },
+      {
+        "title": "Used Gear Hack",
+        "desc": "Buy last generation's flagships. A used GH5 or A6400 is still a beast for 99% of creator needs."
+      }
+    ],
+    "quote": "Don't let the gear hold back the idea. The idea is the capital, the gear is just the interest.",
+    "nextSlug": "lighting-101",
+    "nextTitle": "Lighting 101"
+  },
+  {
+    "slug": "clear-audio",
+    "title": "Crystal Clear Audio",
+    "category": "Production",
+    "date": "Jan 07, 2025",
+    "lead": "Bad audio is the number one reason people stop watching a video or listening to a podcast. It's physically fatiguing for the brain.",
+    "problem": "Recording in a large empty room with hard floors creates 'room echo'. You can have a $500 mic, but in a bad room, it will sound like a tin can.",
+    "insight": "A quiet environment and a mic placed 6 inches from your mouth are more important than any software filter.",
+    "steps": [
+      {
+        "title": "Treat Your Space",
+        "desc": "Use rugs, curtains, and pillows to absorb sound. Even a closet full of clothes is a better studio than an office."
+      },
+      {
+        "title": "The 6-Inch Rule",
+        "desc": "Maintain a consistent distance from your microphone. Use a pop filter to stop 'plosive' air blasts (P-pops)."
+      },
+      {
+        "title": "Basic Post-Processing",
+        "desc": "Use a subtle Compressor to even out your volume and a Limiter to ensure you never 'clip' (distort)."
+      }
+    ],
+    "quote": "If the eyes are the window to the soul, the ears are the doorway to the mind.",
+    "nextSlug": "podcast-launch",
+    "nextTitle": "Podcast Launch Plan"
+  },
+  {
+    "slug": "podcast-launch",
+    "title": "Podcast Launch Plan",
+    "category": "Strategy",
+    "date": "Jan 07, 2025",
+    "lead": "Most podcasts fail before episode 10. Avoid 'Fade' by building a content bank and a sustainable schedule before you hit publish.",
+    "problem": "Launching without a clear 'Who' and 'Why'. If you're just 'talking about stuff' with a friend, you're not a creator, you're a hobbyist.",
+    "insight": "The 'Rule of Three': Launch with 3 episodes. This gives new listeners a 'binge-able' experience and signals commitment.",
+    "steps": [
+      {
+        "title": "The Identity Statement",
+        "desc": "Write down: 'This podcast helps [Audience] solve [Problem] through [Format].' This is your North Star."
+      },
+      {
+        "title": "Batch Your First Month",
+        "desc": "Record 4 episodes before you launch your first one. This gives you a buffer for 'life stuff'."
+      },
+      {
+        "title": "Distribution Strategy",
+        "desc": "Use a host like Spotify for Podcasters or Buzzsprout to push your show to Apple, Spotify, and everywhere else automatically."
+      }
+    ],
+    "quote": "Podcast growth is slow, then fast. Surround yourself with systems so you can survive the slow part.",
+    "nextSlug": "interview-skills",
+    "nextTitle": "Interview Masterclass"
+  },
+  {
+    "slug": "interview-skills",
+    "title": "Interview Masterclass",
+    "category": "Communication",
+    "date": "Jan 07, 2025",
+    "lead": "A great interview isn't a search for information; it's a search for a story that hasn't been told yet.",
+    "problem": "Asking 'Wikipedia Questions' (things you can find in a 2-minute search). This bores the guest and the audience.",
+    "insight": "The best questions start with 'How did it feel when...' or 'Walk me through the moment...' Focus on turning points.",
+    "steps": [
+      {
+        "title": "The 80/20 Rule",
+        "desc": "Listen 80% of the time, talk 20%. Your job is to be the guide, not the main character."
+      },
+      {
+        "title": "The 'Second Question'",
+        "desc": "The first answer is usually practiced. The 'Second Question' (follow-up) is where the real insight happens."
+      },
+      {
+        "title": "Research Deeply",
+        "desc": "Find the guest's past interviews. If they have a story they tell everywhere, find a new angle to it."
+      }
+    ],
+    "quote": "Good interviewing is the art of strategic listening.",
+    "nextSlug": "voice-acting",
+    "nextTitle": "Voice Acting Basics"
+  },
+  {
+    "slug": "voice-acting",
+    "title": "Voice Acting Basics",
+    "category": "Performance",
+    "date": "Jan 07, 2025",
+    "lead": "You are a performer, even if you're just reading a script. Learn how to weaponize your voice to hold attention.",
+    "problem": "The 'Robotic Read'. If you read like you're in school, people will tune out in seconds. You need vocal dynamics.",
+    "insight": "Volume, Pacing, and Tone. Change one of these every 30 seconds to keep the listener's brain tracking your voice.",
+    "steps": [
+      {
+        "title": "The 'One Person' Rule",
+        "desc": "Picture one specific person you are talking to. It makes your tone natural and intimate rather than formal."
+      },
+      {
+        "title": "Strategic Pausing",
+        "desc": "The most important part of your voice is the silence. Pause before a big reveal to build tension."
+      },
+      {
+        "title": "Hydration and Warmups",
+        "desc": "A 'dry' mouth sounds clicky on a mic. Drink water and do 2 minutes of humming to warm up your cords."
+      }
+    ],
+    "quote": "Your voice is an instrument. Learn the scales before you try to play a concerto.",
+    "nextSlug": "clear-audio",
+    "nextTitle": "Crystal Clear Audio"
+  },
+  {
+    "slug": "viral-hooks",
+    "title": "Viral Hooks Library",
+    "category": "Copywriting",
+    "date": "Jan 07, 2025",
+    "lead": "Content without a hook is like a house without a door. Nobody can get inside, no matter how beautiful it is.",
+    "problem": "Starting with 'I think...' or 'Hello guys!'. You are wasting the most valuable real estate you have: the first 3 seconds.",
+    "insight": "A hook must trigger one of three things: Curiosity, Fear of Missing Out (FOMO), or Relatability.",
+    "steps": [
+      {
+        "title": "The 'Negative' Hook",
+        "desc": "Instead of 'How to win', try 'Why most people fail at...'. Humans are wired to avoid losses more than seek gains."
+      },
+      {
+        "title": "Specific Numbers",
+        "desc": "Use odd, specific numbers. '7 steps' is vague. 'The 4.2 minute habit' is intriguing."
+      },
+      {
+        "title": "The Contrast Frame",
+        "desc": "Compare two unexpected things. 'How a pizza delivery guy built a $1M software business'."
+      }
+    ],
+    "quote": "The hook doesn't make the content good, but it makes the content known.",
+    "nextSlug": "newsletter-engine",
+    "nextTitle": "Newsletter Growth Engine"
+  },
+  {
+    "slug": "newsletter-engine",
+    "title": "Newsletter Growth Engine",
+    "category": "Process",
+    "date": "Jan 07, 2025",
+    "lead": "A newsletter is a direct line to your audience. But to grow, you need to transition from a 'curator' to a 'creator'.",
+    "problem": "The 'Link Dump'. If your newsletter is just a list of things you found online, you have no moat. Anyone can do that.",
+    "insight": "Your value isn't information; it's filtered insight. Tell them what TO DO with the links you find.",
+    "steps": [
+      {
+        "title": "The Content Skeleton",
+        "desc": "Create 3 repeatable segments (e.g., One Lesson, One Tool, One Question). It makes writing 10x faster."
+      },
+      {
+        "title": "The Weekly Capture",
+        "desc": "Don't sit down to 'write'. Collect thoughts throughout the week in a dedicated app. Sunday is just 'assembly'."
+      },
+      {
+        "title": "Iterate via Replies",
+        "desc": "Ask your readers to reply to a specific question. Their answers are the raw material for your next edition."
+      }
+    ],
+    "quote": "Email is the digital living room. Be a great guest and you'll always be invited back.",
+    "nextSlug": "story-structures",
+    "nextTitle": "Storytelling Frameworks"
+  },
+  {
+    "slug": "story-structures",
+    "title": "Storytelling Frameworks",
+    "category": "Storytelling",
+    "date": "Jan 07, 2025",
+    "lead": "Facts tell, but stories sell. If you want people to remember your advice, wrap it in a narrative.",
+    "problem": "Listing features or steps without context. The human brain is designed to remember sequences of cause and effect, not lists of facts.",
+    "insight": "Conflict is the soul of story. If there's no struggle, there's no reason to listen.",
+    "steps": [
+      {
+        "title": "The ABT Framework",
+        "desc": "And, But, Therefore. 'I did X AND Y, BUT Z happened, THEREFORE I learned...' It's the simplest way to build tension."
+      },
+      {
+        "title": "The Hero's Journey (Lite)",
+        "desc": "Present a Call to Adventure, a Mentor (you/your tool), and a Transformation (the result)."
+      },
+      {
+        "title": "Open Loops",
+        "desc": "Start with a mystery. 'I almost lost everything in 2022. Here's what happened...' Don't explain until the end."
+      }
+    ],
+    "quote": "People will forget what you said, but they will never forget how you made them feel through a story.",
+    "nextSlug": "cold-emails",
+    "nextTitle": "Cold Email Templates"
+  },
+  {
+    "slug": "cold-emails",
+    "title": "Cold Email Templates",
+    "category": "Business",
+    "date": "Jan 07, 2025",
+    "lead": "Networking is just one email away. But 99% of cold emails are ignored because they are selfish and generic.",
+    "problem": "The 'I-I-I' email. Focusing on what YOU want instead of how YOU can help THEM. If you ask for a 'favor', you're already losing.",
+    "insight": "The 'Bridge of Value'. Every cold email must solve a specific problem for the recipient before you ask for anything.",
+    "steps": [
+      {
+        "title": "The 'Loom' Hack",
+        "desc": "Send a 60-second video showing them exactly where their business could improve. It's impossible to ignore."
+      },
+      {
+        "title": "Hyper-Specific Subject Lines",
+        "desc": "Avoid 'Collaboration'. Use 'Thoughts on [Specific Recent Project Name]'. It proves you aren't a bot."
+      },
+      {
+        "title": "The Low-Friction Call to Action",
+        "desc": "Don't ask for a '30-minute call'. Ask if they are 'open to learning more' or 'if this is a priority'."
+      }
+    ],
+    "quote": "Opportunities don't happen, you create them in someone else's inbox.",
+    "nextSlug": "viral-hooks",
+    "nextTitle": "Viral Hooks Library"
+  },
+  {
+    "slug": "color-theory",
+    "title": "Color Theory for Non-Designers",
+    "category": "Foundations",
+    "date": "Jan 07, 2025",
+    "lead": "Color isn't just decoration; it's a structural element that guides attention and builds brand recognition.",
+    "problem": "Using too many colors or colors that clash. This creates 'visual noise' which makes your content look amateur and untrustworthy.",
+    "insight": "The 60-30-10 Rule. 60% Primary (Neutral), 30% Secondary (Brand), 10% Accent (Call to Action).",
+    "steps": [
+      {
+        "title": "Emotional Association",
+        "desc": "Blue for trust, Red for urgency, Green for growth. Choose colors that match the 'feeling' of your niche."
+      },
+      {
+        "title": "Contrast Checking",
+        "desc": "Ensure your text color has enough contrast against the background. Accessibility is non-negotiable."
+      },
+      {
+        "title": "Stick to a Palette",
+        "desc": "Use tools like Coolors.co to generate a palette and never deviate from those hex codes across platforms."
+      }
+    ],
+    "quote": "Consistency in color builds a mental shortcut to your brand in the viewer's mind.",
+    "nextSlug": "typography-rules",
+    "nextTitle": "Typography Rules"
+  },
+  {
+    "slug": "typography-rules",
+    "title": "Typography Rules",
+    "category": "Typography",
+    "date": "Jan 07, 2025",
+    "lead": "Typography is the voice of your brand when you aren't speaking. It determines how your ideas are 'heard' by the reader.",
+    "problem": "Bad hierarchy. If everything is the same size, nothing is important. Use size, weight, and color to guide the eye.",
+    "insight": "White space isn't 'empty'. It's the frame that makes the text readable. Don't be afraid of large margins.",
+    "steps": [
+      {
+        "title": "The Two-Font Limit",
+        "desc": "Pick one Sans-Serif for body text and one Serif (or Bold Sans) for headings. Any more is a mess."
+      },
+      {
+        "title": "Line Length & Leading",
+        "desc": "Keep sentences between 50-75 characters wide. Use 'Leading' (line spacing) so the eye doesn't get lost."
+      },
+      {
+        "title": "Alignment Integrity",
+        "desc": "Never center-align long blocks of text. Left-align for readability; center is for short headers only."
+      }
+    ],
+    "quote": "Typography is 90% of design. Master it and you've mastered the visual web.",
+    "nextSlug": "visual-hierarchy",
+    "nextTitle": "Visual Hierarchy Guide"
+  },
+  {
+    "slug": "visual-hierarchy",
+    "title": "Visual Hierarchy Guide",
+    "category": "UI/UX",
+    "date": "Jan 07, 2025",
+    "lead": "You are the director of the viewer's gaze. Learn how to pull their focus to what matters most using visual weight.",
+    "problem": "The 'F-Pattern' Fatigue. Readers scan in an F-pattern. If your important info is in the bottom right, it will be missed.",
+    "insight": "Size, Color, and Proximity. Humans look at the biggest thing first, the brightest thing second, and groups of things last.",
+    "steps": [
+      {
+        "title": "The Squint Test",
+        "desc": "Squint at your design. If you can still identify the primary call to action, your hierarchy is working."
+      },
+      {
+        "title": "Use Selective Saturation",
+        "desc": "Keep the page neutral and use one vibrant color only for the button you want them to click."
+      },
+      {
+        "title": "Negative Space Breathing",
+        "desc": "Group related items together and leave gaps between unrelated ones. This creates 'chunks' the brain can process easily."
+      }
+    ],
+    "quote": "Clarity is more important than decoration. A clear design always beats a 'cool' one.",
+    "nextSlug": "asset-management",
+    "nextTitle": "Asset Management Spec"
+  },
+  {
+    "slug": "asset-management",
+    "title": "Asset Management Spec",
+    "category": "Workflow",
+    "date": "Jan 07, 2025",
+    "lead": "A messy folder structure is a tax on your creativity. Every minute spent searching for a file is a minute lost to deep work.",
+    "problem": "Files named 'Final_v2_DEFINITELY_FINAL.mp4'. This is a recipe for disaster when you need to repurpose content 6 months later.",
+    "insight": "Standardized Naming Conventions. Use YYYY-MM-DD_[Platform]_[ShortTitle]_[Type].",
+    "steps": [
+      {
+        "title": "Centralized Source Folder",
+        "desc": "Keep all your raw assets, fonts, and brand colors in one cloud-synced folder accessible from any device."
+      },
+      {
+        "title": "The 'Trash' Buffer",
+        "desc": "Don't delete old project files immediately. Keep original project files but delete heavy render proxies to save space."
+      },
+      {
+        "title": "Asset Cataloging",
+        "desc": "Use a tool like Notion or Eagle to tag your b-roll and graphics. Search by 'vibe' rather than just 'filename'."
+      }
+    ],
+    "quote": "Discipline in the small things leads to freedom in the big things. Organize your files, free your mind.",
+    "nextSlug": "color-theory",
+    "nextTitle": "Color Theory for Non-Designers"
+  },
+  {
+    "slug": "content-pillars",
+    "title": "The Content Pillar System",
+    "category": "Strategy",
+    "date": "Jan 08, 2025",
+    "lead": "Stop the daily grind of chasing trends. Build a library of 'Pillar' content that acts as an eternal source of distribution.",
+    "problem": "Creators burn out because they treat every post as a new starting line. You need a system where one deep research effort feeds 20 different channels.",
+    "insight": "The 'Atomization' Principle. Break a 3,000-word essay into 1 video, 5 threads, 10 images, and 4 newsletters.",
+    "steps": [
+      {
+        "title": "Identify Your Core Pillars",
+        "desc": "Select 3-5 high-level topics you want to be known for. Everything you create must map back to one of these."
+      },
+      {
+        "title": "The Master Asset Creation",
+        "desc": "Once a month, create one 'Deep Dive' asset (a long video or guide). This is the source code for everything else."
+      },
+      {
+        "title": "Cross-Platform Translation",
+        "desc": "Don't copy-paste. Translate the 'vibe' of the pillar into the 'native tongue' of each platform (e.g., visual for IG, punchy for X)."
+      }
+    ],
+    "quote": "If you are everywhere, you are nowhere. If your pillars are everywhere, you are an authority.",
+    "nextSlug": "scripting-retention",
+    "nextTitle": "Scripting for Retention"
+  }
+]

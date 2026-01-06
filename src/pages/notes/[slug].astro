@@ -1,21 +1,11 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import Navbar from '../../components/Navbar.astro';
-import Footer from '../../components/Footer.astro';
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import notesData from "../../data/notes.json";
 
 export async function getStaticPaths() {
-  const notes = [
-    { slug: 'linkedin-growth', title: '10x Your LinkedIn Growth', category: 'Strategy' },
-    { slug: 'creator-tech-stack', title: 'The Creator Tech Stack', category: 'Tools' },
-    { slug: 'monetization-map', title: 'Monetization Starter Map', category: 'Map' },
-    { slug: 'scripting-retention', title: 'Scripting for Retension', category: 'Strategy' },
-    { slug: 'email-marketing', title: 'Email Marketing for Creators', category: 'Strategy' },
-    { slug: 'brand-deals', title: 'Brand Deal Negotiation', category: 'Tools' },
-    { slug: 'creator-flywheel', title: 'Understanding the Creator Flywheel', category: 'Strategy' },
-    { slug: 'find-niche', title: 'Identifying Your High-Value Niche', category: 'Strategy' },
-  ];
-
-  return notes.map((note) => ({
+  return notesData.map((note) => ({
     params: { slug: note.slug },
     props: { note },
   }));
@@ -26,35 +16,44 @@ const { note } = Astro.props;
 
 <Layout title={note.title}>
   <Navbar />
-  
+
   <main class="note-page">
     <div class="container narrow">
       <header class="note-header">
         <div class="header-meta">
           <span class="category-tag box-border">{note.category}</span>
-          <span class="date hand-drawn">Dec 24, 2024</span>
+          <span class="date hand-drawn">{note.date}</span>
         </div>
         <h1>{note.title}</h1>
         <div class="author-line">
-          <img src="https://api.dicebear.com/7.x/bottts/svg?seed=creator" alt="Avatar" class="avatar box-border" />
+          <img
+            src="https://api.dicebear.com/7.x/bottts/svg?seed=creator"
+            alt="Avatar"
+            class="avatar box-border"
+          />
           <span>By <strong>The Creator Team</strong></span>
         </div>
       </header>
 
       <div class="note-content">
         <p class="lead highlight-teal">
-          The creator economy isn't about luck anymore. It's about building a <strong>repeatable system</strong>. In these notes, we break down the exact mechanics of {note.title.toLowerCase()}.
+          {note.lead}
         </p>
 
         <section class="editorial-section">
           <h2>The Core Problem</h2>
-          <p>Most creators fail because they focus on <strong>tactics</strong> instead of <strong>architecture</strong>. Tactics (like "use this sound") change weekly. Architecture (how you move a viewer to a subscriber) is timeless.</p>
-          
+          <p>{note.problem}</p>
+
           <div class="annotation-container">
             <div class="main-text">
-              <p>When you sit down to create, your first question shouldn't be "What should I make?" but "Who am I building this for?"</p>
+              <p>
+                Strategy is about making choices, tradeoffs; it's about
+                deliberately choosing to be different.
+              </p>
             </div>
-            <div class="annotation hand-drawn">This is the "North Star" of growth!</div>
+            <div class="annotation hand-drawn">
+              This is the "North Star" of growth!
+            </div>
           </div>
         </section>
 
@@ -63,45 +62,39 @@ const { note } = Astro.props;
             <span class="insight-icon">💡</span>
             <h3 class="hand-drawn">Strategic Insight</h3>
           </div>
-          <p>Complexity is the enemy of scale. If you can't explain your strategy to a 10-year-old, it's too complex to automate.</p>
+          <p>{note.insight}</p>
         </section>
 
         <section class="editorial-section">
           <h2>How to Implement</h2>
           <p>Follow these three fundamental shifts in your daily workflow:</p>
           <ul class="illustrated-list">
-            <li>
-              <span class="list-number">01</span>
-              <div>
-                <strong>Audit your inputs:</strong> Stop consuming what your audience consumes. Start consuming what your heroes consume.
-              </div>
-            </li>
-            <li>
-              <span class="list-number">02</span>
-              <div>
-                <strong>Build in public:</strong> Transparency breeds trust. Trust is the currency of the creator economy.
-              </div>
-            </li>
-            <li>
-              <span class="list-number">03</span>
-              <div>
-                <strong>Iterate based on data:</strong> Feelings lie. Numbers tell the truth.
-              </div>
-            </li>
+            {
+              note.steps.map((step, index) => (
+                <li>
+                  <span class="list-number">0{index + 1}</span>
+                  <div>
+                    <strong>{step.title}:</strong> {step.desc}
+                  </div>
+                </li>
+              ))
+            }
           </ul>
         </section>
 
         <div class="quote-block box-border">
           <span class="quote-mark">“</span>
-          <blockquote>The goal isn't to be everywhere. The goal is to be undeniable where it matters.</blockquote>
+          <blockquote>{note.quote}</blockquote>
         </div>
       </div>
 
       <div class="note-footer">
         <div class="next-step box-border shadow-offset">
           <div class="hand-drawn label">Suggested Next Read</div>
-          <h3>The Creator Tech Stack</h3>
-          <a href="/notes/creator-tech-stack" class="btn btn-primary">Take the next step</a>
+          <h3>{note.nextTitle}</h3>
+          <a href={`/notes/${note.nextSlug}`} class="btn btn-primary"
+            >Take the next step</a
+          >
         </div>
       </div>
     </div>
@@ -204,7 +197,7 @@ const { note } = Astro.props;
   }
 
   .annotation::before {
-    content: '→';
+    content: "→";
     display: block;
     margin-bottom: 5px;
     font-size: 1.5rem;

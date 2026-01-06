@@ -1,0 +1,92 @@
+[
+  {
+    "slug": "obs-studio",
+    "name": "OBS Studio",
+    "description": "Free and open source software for video recording and live streaming.",
+    "longDescription": "OBS Studio is the gold standard for free streaming software. It allows for high performance real-time video/audio capturing and mixing. Create scenes made up of multiple sources including window captures, images, text, browser windows, webcams, capture cards and more.",
+    "category": "Video",
+    "icon": "🎥",
+    "link": "https://obsproject.com",
+    "pricing": "Free"
+  },
+  {
+    "slug": "davinci-resolve",
+    "name": "DaVinci Resolve",
+    "description": "Professional video editing, color correction, visual effects and audio post production.",
+    "longDescription": "DaVinci Resolve is the world's only solution that combines editing, color correction, visual effects, motion graphics and audio post production all in one software tool. Its elegant, modern interface is fast to learn and easy for new users, yet powerful for professionals.",
+    "category": "Video",
+    "icon": "🎞️",
+    "link": "https://www.blackmagicdesign.com/products/davinciresolve",
+    "pricing": "Freemium"
+  },
+  {
+    "slug": "notion",
+    "name": "Notion",
+    "description": "The all-in-one workspace for your notes, tasks, wikis, and databases.",
+    "longDescription": "Notion is a single space where you can think, write, and plan. Capture thoughts, manage projects, or even run an entire company — and do it exactly the way you want.",
+    "category": "Productivity",
+    "icon": "📝",
+    "link": "https://www.notion.so",
+    "pricing": "Freemium"
+  },
+  {
+    "slug": "canva",
+    "name": "Canva",
+    "description": "A graphic design platform that allows users to create social media graphics, presentations, posters and other visual content.",
+    "longDescription": "Canva makes design simple for everyone. Create designs for Web or Print: Blog graphics, presentations, Facebook covers, flyers, posters, invitations and so much more.",
+    "category": "Design",
+    "icon": "🎨",
+    "link": "https://www.canva.com",
+    "pricing": "Freemium"
+  },
+  {
+    "slug": "audacity",
+    "name": "Audacity",
+    "description": "Free, open source, cross-platform audio software.",
+    "longDescription": "Audacity is an easy-to-use, multi-track audio editor and recorder for Windows, Mac OS X, GNU/Linux and other operating systems. Developed by a group of volunteers as open source.",
+    "category": "Audio",
+    "icon": "🎤",
+    "link": "https://www.audacityteam.org",
+    "pricing": "Free"
+  },
+  {
+    "slug": "buffer",
+    "name": "Buffer",
+    "description": "The most intuitive and affordable social media management tool.",
+    "longDescription": "Buffer helps you build an audience organically. We're a values-driven company that provides affordable, intuitive, marketing tools for ambitious people and teams.",
+    "category": "Social Media",
+    "icon": "🐦",
+    "link": "https://buffer.com",
+    "pricing": "Freemium"
+  },
+  {
+    "slug": "convertkit",
+    "name": "ConvertKit",
+    "description": "The creator marketing platform for your newsletter.",
+    "longDescription": "ConvertKit is the go-to marketing hub for creators that helps you grow and monetize your audience with ease.",
+    "category": "Marketing",
+    "icon": "📧",
+    "link": "https://convertkit.com",
+    "pricing": "Paid"
+  },
+  {
+    "slug": "creator-tech-stack",
+    "name": "The Creator Tech Stack",
+    "description": "The essential tools for recording, editing, and managing your creator business professionally.",
+    "longDescription": "A curated list of essential tools used by top creators to manage their workflow and business.",
+    "category": "Tools",
+    "icon": "🛠️",
+    "link": "/notes/creator-tech-stack",
+    "pricing": "Various"
+  },
+  {
+    "slug": "editing-workflow",
+    "name": "High-Retention Editing Workflow",
+    "description": "Software and plugins to speed up your editing without sacrificing quality.",
+    "longDescription": "Optimized tools and plugins specifically selected to enhance video retention and editing speed.",
+    "category": "Tools",
+    "icon": "🎞️",
+    "link": "/notes/editing-workflow",
+    "pricing": "Various"
+  }
+]

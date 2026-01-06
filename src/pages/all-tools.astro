@@ -1,0 +1,391 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import toolsData from "../data/tools.json";
+
+// Group tools by category
+const toolsByCategory = toolsData.reduce((acc, tool) => {
+    if (!acc[tool.category]) {
+        acc[tool.category] = [];
+    }
+    acc[tool.category].push(tool);
+    return acc;
+}, {});
+
+const categories = Object.keys(toolsByCategory).sort();
+---
+
+<Layout title="All Tools Directory">
+    <Navbar />
+
+    <main>
+        <section class="hero-minimal">
+            <div class="container">
+                <div
+                    class="badge hand-drawn"
+                    style="background-color: var(--accent-indigo); color: white;"
+                >
+                    Directory
+                </div>
+                <h1>All Creator <span class="highlight-indigo">Tools</span></h1>
+                <p class="lead">
+                    A comprehensive list of software and hardware for modern
+                    creators.
+                </p>
+
+                <div class="search-container">
+                    <div class="search-wrapper box-border">
+                        <span class="search-icon">🔍</span>
+                        <input
+                            type="text"
+                            id="tool-search"
+                            placeholder="Search for tools (e.g., 'editing', 'obs', 'video')..."
+                            autocomplete="off"
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tools-directory">
+            <div class="container">
+                <!-- Search Results Container (Hidden by default) -->
+                <div id="search-results-view" class="hidden">
+                    <h2
+                        class="hand-drawn category-title"
+                        style="border-bottom: none;"
+                    >
+                        Search Results
+                    </h2>
+                    <div class="tools-grid" id="search-results-grid">
+                        <!-- Results injected here -->
+                    </div>
+                    <div
+                        id="no-results"
+                        class="hidden"
+                        style="text-align: center; color: var(--text-secondary); font-size: 1.2rem; margin-top: 2rem;"
+                    >
+                        No tools found matching your search.
+                    </div>
+                </div>
+
+                <!-- Default Categories View -->
+                <div id="default-view">
+                    {
+                        categories.map((category) => (
+                            <div class="category-block">
+                                <h2 class="hand-drawn category-title">
+                                    {category}
+                                </h2>
+                                <div class="tools-grid">
+                                    {toolsByCategory[category].map((tool) => (
+                                        <a
+                                            href={`/tools/${tool.slug}`}
+                                            class="tool-card-link"
+                                        >
+                                            <div class="tool-card box-border shadow-soft">
+                                                <div class="tool-icon">
+                                                    {tool.icon}
+                                                </div>
+                                                <div class="tool-content">
+                                                    <h3>{tool.name}</h3>
+                                                    <p>{tool.description}</p>
+                                                    <span class="tool-pricing">
+                                                        {tool.pricing}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<script>
+    import Fuse from "fuse.js";
+
+    // Get tools data from the DOM or pass it via define:vars if simpler, but here we can just fetch it or embed it.
+    // Embedding is safest for static build.
+    // We can't import the JSON directly in the client script easily without bundle setup sometimes,
+    // so we'll just read the data from a hidden script tag or similar pattern,
+    // OR we relies on the fact that Astro treats this script as a module that can import JSON if supported.
+    // SAFEST PATTERN: Serialize it on the server and use define:vars (not available in pure <script> tag without is:inline usually, actually define:vars works on <script define:vars>).
+    // Let's use the define:vars approach on a separate inline script to set the global, then use it here.
+    // OR just use a data attribute on the main element.
+</script>
+
+<script define:vars={{ toolsData }}>
+    window.allToolsData = toolsData;
+</script>
+
+<script>
+    import Fuse from "fuse.js";
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const searchInput = document.getElementById("tool-search");
+        const defaultView = document.getElementById("default-view");
+        const searchResultsView = document.getElementById(
+            "search-results-view",
+        );
+        const searchResultsGrid = document.getElementById(
+            "search-results-grid",
+        );
+        const noResultsMsg = document.getElementById("no-results");
+
+        if (!searchInput || !window.allToolsData) return;
+
+        const fuseOptions = {
+            keys: [
+                { name: "name", weight: 0.7 },
+                { name: "description", weight: 0.5 },
+                { name: "category", weight: 0.3 },
+                { name: "longDescription", weight: 0.1 },
+            ],
+            threshold: 0.4, // Fuzzy search threshold
+            includeScore: true,
+        };
+
+        const fuse = new Fuse(window.allToolsData, fuseOptions);
+
+        function renderCard(tool) {
+            return `
+                <a href="/tools/${tool.slug}" class="tool-card-link">
+                    <div class="tool-card box-border shadow-soft">
+                        <div class="tool-icon">
+                            ${tool.icon}
+                        </div>
+                        <div class="tool-content">
+                            <h3>${tool.name}</h3>
+                            <p>${tool.description}</p>
+                            <span class="tool-pricing">
+                                ${tool.pricing}
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            `;
+        }
+
+        searchInput.addEventListener("input", (e) => {
+            const query = e.target.value.trim();
+
+            if (query.length === 0) {
+                defaultView.classList.remove("hidden");
+                searchResultsView.classList.add("hidden");
+                return;
+            }
+
+            defaultView.classList.add("hidden");
+            searchResultsView.classList.remove("hidden");
+
+            const results = fuse.search(query);
+
+            if (results.length === 0) {
+                searchResultsGrid.innerHTML = "";
+                noResultsMsg.classList.remove("hidden");
+            } else {
+                noResultsMsg.classList.add("hidden");
+                searchResultsGrid.innerHTML = results
+                    .map((result) => renderCard(result.item))
+                    .join("");
+            }
+        });
+    });
+</script>
+
+<style>
+    main {
+        padding-bottom: 5rem;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .hero-minimal {
+        padding: 6rem 0 2rem; /* Adjusted padding */
+        background: white;
+        border-bottom: var(--border-width) solid var(--border-color);
+        text-align: center;
+    }
+
+    .hero-minimal h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .search-container {
+        max-width: 600px;
+        margin: 3rem auto 0;
+        padding: 0 1rem;
+    }
+
+    .search-wrapper {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: white;
+        padding: 0 1.5rem;
+        border-radius: 50px; /* Pillow shape or standard rounded */
+        border: 2px solid var(--border-color);
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+        transition: all 0.2s ease;
+    }
+
+    .search-wrapper:focus-within {
+        transform: translateY(-2px);
+        box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.15);
+        border-color: var(--accent-indigo);
+    }
+
+    .search-icon {
+        font-size: 1.2rem;
+        margin-right: 1rem;
+        opacity: 0.6;
+    }
+
+    #tool-search {
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        background: transparent;
+        color: var(--text-primary);
+        font-family: inherit;
+    }
+
+    .lead {
+        font-size: 1.4rem;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 0.2rem 0.8rem;
+        border: var(--border-width) solid var(--border-color);
+        margin-bottom: 1.5rem;
+        transform: rotate(-2deg);
+        font-weight: 800;
+    }
+
+    .highlight-indigo {
+        position: relative;
+        z-index: 1;
+    }
+
+    .highlight-indigo::after {
+        content: "";
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 15px;
+        background: var(--accent-indigo);
+        opacity: 0.15;
+        z-index: -1;
+    }
+
+    .tools-directory {
+        padding: 6rem 0;
+    }
+
+    .category-block {
+        margin-bottom: 5rem;
+    }
+
+    .category-title {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: var(--text-primary);
+        border-bottom: 2px solid var(--border-color);
+        display: inline-block;
+        padding-bottom: 0.5rem;
+    }
+
+    .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    .tool-card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block; /* Ensure link takes full space */
+    }
+
+    /* Important: These styles need to be global or deeply targeted if generated by JS, 
+       but Astro scopes styles. Since we are injecting exact same HTML structure in JS, 
+       the scoped classes like .tool-card might NOT apply automatically if Astro hashes them. 
+       
+       Solution: Use :global() for styles that need to apply to JS-injected content or make them global styles. 
+       OR just rely on the structure. 
+       
+       Let's use :global(.class) for the card elements since they appear in both static and dynamic contexts.
+    */
+
+    :global(.tool-card) {
+        background: white;
+        padding: 2rem;
+        border-radius: var(--radius-md);
+        height: 100%;
+        transition:
+            transform 0.2s,
+            box-shadow 0.2s;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        border: var(--border-width) solid var(--border-color);
+    }
+
+    :global(.tool-card:hover) {
+        transform: translateY(-5px);
+        box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    :global(.tool-icon) {
+        font-size: 2.5rem;
+    }
+
+    :global(.tool-content h3) {
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+        margin-top: 0;
+    }
+
+    :global(.tool-content p) {
+        font-size: 1rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    :global(.tool-pricing) {
+        display: inline-block;
+        padding: 0.2rem 0.6rem;
+        background: var(--bg-secondary);
+        border-radius: 4px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+        .hero-minimal h1 {
+            font-size: 2.5rem;
+        }
+    }
+</style>

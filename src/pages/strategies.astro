@@ -1,63 +1,74 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../components/Navbar.astro';
-import Footer from '../components/Footer.astro';
-import NoteCard from '../components/NoteCard.astro';
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import NoteCard from "../components/NoteCard.astro";
 
 const strategies = [
   {
     title: "10x Your LinkedIn Growth",
-    description: "A deep dive into the algorithms and content strategies that actually work in 2024.",
+    description:
+      "A deep dive into the algorithms and content strategies that actually work in 2024.",
     category: "Strategy",
     href: "/notes/linkedin-growth",
     icon: "🚀",
-    color: "var(--accent-red)"
+    color: "var(--accent-red)",
   },
   {
     title: "Understanding the Creator Flywheel",
-    description: "Before you build, you must understand the mechanics of how content scales and sustains growth.",
+    description:
+      "Before you build, you must understand the mechanics of how content scales and sustains growth.",
     category: "Strategy",
     href: "/notes/creator-flywheel",
     icon: "⚙️",
-    color: "var(--accent-red)"
+    color: "var(--accent-red)",
   },
   {
     title: "High-Value Niche Identification",
-    description: "Why 'generalist' creators struggle and how to find your specific authority in a crowded market.",
+    description:
+      "Why 'generalist' creators struggle and how to find your specific authority in a crowded market.",
     category: "Strategy",
     href: "/notes/find-niche",
     icon: "🎯",
-    color: "var(--accent-red)"
+    color: "var(--accent-red)",
   },
   {
     title: "The Content Pillar System",
-    description: "Learn how to turn one big idea into 20 pieces of high-performing content across platforms.",
+    description:
+      "Learn how to turn one big idea into 20 pieces of high-performing content across platforms.",
     category: "Strategy",
-    href: "/notes/scripting-retention",
+    href: "/notes/content-pillars",
     icon: "🏛️",
-    color: "var(--accent-red)"
+    color: "var(--accent-red)",
   },
   {
     title: "Retention-First Scripting",
-    description: "How to write scripts that keep viewers hooked from the first second to the last.",
+    description:
+      "How to write scripts that keep viewers hooked from the first second to the last.",
     category: "Strategy",
     href: "/notes/scripting-retention",
     icon: "✍️",
-    color: "var(--accent-red)"
-  }
+    color: "var(--accent-red)",
+  },
 ];
 ---
 
 <Layout title="Strategies">
   <Navbar />
-  
+
   <main>
     <section class="hero-minimal">
       <div class="container">
-        <div class="badge hand-drawn" style="background-color: var(--accent-red); color: white;">Playbooks</div>
+        <div
+          class="badge hand-drawn"
+          style="background-color: var(--accent-red); color: white;"
+        >
+          Playbooks
+        </div>
         <h1>Creator <span class="highlight-red">Strategies</span></h1>
         <p class="lead">
-          Tactical blueprints for building, scaling, and sustaining your presence in the creator economy.
+          Tactical blueprints for building, scaling, and sustaining your
+          presence in the creator economy.
         </p>
       </div>
     </section>
@@ -65,9 +76,7 @@ const strategies = [
     <section class="content-grid-section">
       <div class="container">
         <div class="notes-grid">
-          {strategies.map(note => (
-            <NoteCard {...note} />
-          ))}
+          {strategies.map((note) => <NoteCard {...note} />)}
         </div>
       </div>
     </section>

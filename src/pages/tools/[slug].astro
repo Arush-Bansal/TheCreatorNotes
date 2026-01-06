@@ -1,0 +1,220 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import toolsData from "../../data/tools.json";
+
+export async function getStaticPaths() {
+    return toolsData.map((tool) => ({
+        params: { slug: tool.slug },
+        props: { tool },
+    }));
+}
+
+const { tool } = Astro.props;
+---
+
+<Layout title={`${tool.name} - Creator Tools`}>
+    <Navbar />
+
+    <main>
+        <div class="breadcrumb-container">
+            <div class="container">
+                <a href="/all-tools" class="breadcrumb-link"
+                    >← Back to All Tools</a
+                >
+            </div>
+        </div>
+
+        <section class="tool-detail">
+            <div class="container">
+                <div class="tool-header">
+                    <div class="icon-wrapper box-border">
+                        {tool.icon}
+                    </div>
+                    <div class="header-content">
+                        <div class="badges">
+                            <span class="category-badge">{tool.category}</span>
+                            <span class="pricing-badge">{tool.pricing}</span>
+                        </div>
+                        <h1>{tool.name}</h1>
+                        <p class="lead">{tool.description}</p>
+                        <div class="actions">
+                            <a
+                                href={tool.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn btn-primary cta-btn"
+                            >
+                                Visit Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tool-body box-border shadow-offset">
+                    <h2>Overview</h2>
+                    <p>{tool.longDescription || tool.description}</p>
+
+                    <div class="meta-info">
+                        <p><strong>Category:</strong> {tool.category}</p>
+                        <p><strong>Pricing Model:</strong> {tool.pricing}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+</Layout>
+
+<style>
+    main {
+        padding-bottom: 5rem;
+        background-color: var(--bg-secondary); /* Light bg for contrast */
+        min-height: 80vh;
+    }
+
+    .breadcrumb-container {
+        padding: 2rem 0;
+    }
+
+    .breadcrumb-link {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+    .breadcrumb-link:hover {
+        text-decoration: underline;
+    }
+
+    .tool-detail {
+        padding-bottom: 4rem;
+    }
+
+    .tool-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .icon-wrapper {
+        font-size: 5rem;
+        background: white;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: var(--border-width) solid var(--border-color);
+        border-radius: var(--radius-md);
+        flex-shrink: 0;
+    }
+
+    .header-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        line-height: 1.1;
+    }
+
+    .lead {
+        font-size: 1.4rem;
+        color: var(--text-secondary);
+        margin-bottom: 2rem;
+        max-width: 600px;
+    }
+
+    .badges {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .category-badge,
+    .pricing-badge {
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        padding: 0.3rem 0.6rem;
+        border: 1px solid var(--border-color);
+        border-radius: 4px;
+        background: white;
+    }
+
+    .cta-btn {
+        background-color: var(--accent-teal); /* Or other accent */
+        color: white;
+        padding: 0.8rem 2rem;
+        font-size: 1.1rem;
+        box-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+        border: 2px solid black;
+        transition: all 0.2s;
+    }
+
+    .cta-btn:active {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+    }
+
+    .tool-body {
+        background: white;
+        padding: 3rem;
+        border: var(--border-width) solid var(--border-color);
+        border-radius: var(--radius-md);
+    }
+
+    .tool-body h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid var(--bg-secondary);
+        padding-bottom: 0.5rem;
+    }
+
+    .tool-body p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--text-primary);
+        margin-bottom: 2rem;
+    }
+
+    .meta-info {
+        background: var(--bg-secondary);
+        padding: 1.5rem;
+        border-radius: 8px;
+    }
+
+    .meta-info p {
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .meta-info p:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+        .tool-header {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.5rem;
+        }
+
+        .badges {
+            justify-content: center;
+        }
+
+        .icon-wrapper {
+            width: 100px;
+            height: 100px;
+            font-size: 3.5rem;
+        }
+
+        .header-content h1 {
+            font-size: 2.5rem;
+        }
+    }
+</style>
