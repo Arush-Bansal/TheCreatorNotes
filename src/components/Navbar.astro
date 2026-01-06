@@ -1,4 +1,6 @@
 ---
+import Logo from "./Logo.astro";
+
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/start-here", label: "Start Here", isSpecial: true },
@@ -10,7 +12,10 @@ const navLinks = [
 <header class="navbar">
   <div class="container nav-container">
     <a href="/" class="logo">
-      The<span class="logo-red">Creator</span>Notes
+      <Logo size={32} className="logo-img" />
+      <span class="logo-text">
+        The<span class="logo-red">Creator</span>Notes
+      </span>
     </a>
 
     <div class="nav-menu">
@@ -64,12 +69,23 @@ const navLinks = [
   }
 
   .logo {
-    font-size: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
     font-weight: 900;
     letter-spacing: -0.04em;
     color: var(--text-primary);
-    z-index: 1001; /* Keep logo above menu */
+    z-index: 1001;
     position: relative;
+  }
+
+  .logo-img {
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    line-height: 1;
   }
 
   .logo-red {

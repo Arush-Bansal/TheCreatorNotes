@@ -1,4 +1,5 @@
 ---
+import Logo from "./Logo.astro";
 const year = new Date().getFullYear();
 ---
 
@@ -6,13 +7,22 @@ const year = new Date().getFullYear();
   <div class="container footer-grid">
     <div class="footer-brand">
       <a href="/" class="logo">
-        The<span class="logo-red">Creator</span>Notes
+        <Logo
+          size={28}
+          color="white"
+          accentColor="var(--accent-yellow)"
+          className="logo-img"
+        />
+        <span class="logo-text">
+          The<span class="logo-red">Creator</span>Notes
+        </span>
       </a>
       <p class="brand-description">
-        Helping creators navigate the digital landscape with structured, illustrated strategies.
+        Helping creators navigate the digital landscape with structured,
+        illustrated strategies.
       </p>
     </div>
-    
+
     <div class="footer-links">
       <div class="link-group">
         <h4>Explore</h4>
@@ -22,7 +32,7 @@ const year = new Date().getFullYear();
           <li><a href="/tools">Tools</a></li>
         </ul>
       </div>
-      
+
       <div class="link-group">
         <h4>Community</h4>
         <ul>
@@ -33,7 +43,7 @@ const year = new Date().getFullYear();
       </div>
     </div>
   </div>
-  
+
   <div class="footer-bottom">
     <div class="container bottom-content">
       <p>&copy; {year} The Creator Notes.</p>
@@ -63,11 +73,21 @@ const year = new Date().getFullYear();
   }
 
   .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     font-size: 1.5rem;
     font-weight: 900;
     margin-bottom: 1rem;
-    display: inline-block;
     color: white;
+  }
+
+  .logo-img {
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    line-height: 1;
   }
 
   .logo-red {
